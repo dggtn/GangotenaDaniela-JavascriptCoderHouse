@@ -64,18 +64,16 @@ footer {
   width: 100%;
   margin-top: auto;
   text-align: right;
-  border-top: 1px solid #21572a;
-  background-color:  #3d7d47;
+  border-top: 1px solid rgba(18, 44, 6, 0.553);;
+  background-color: rgba(5, 11, 2, 0.553);;
 }
 
 footer p {
   font-size: 1rem;
-  color: rgb(175, 234, 66);
-  height: 40vh;
-  background-color:#245501;
-  width: 100%;
-  margin-bottom: 0;
+  color: #f9fcff;
+  padding-right: 2%;
 }
+
 
 .header {
   position: sticky;
