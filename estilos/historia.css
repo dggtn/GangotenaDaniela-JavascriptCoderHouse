@@ -8,12 +8,9 @@ body {
   display: flex;
   flex-direction: column;
 }
-.inicio{
-  background-color:#addb8c;
-  width: 100%;
-  padding: 0;
 
-}
+
+
 .imagenHistoria{
   height: 24rem;
   border-radius: 80px;
