@@ -28,7 +28,10 @@ body {
 	box-shadow: 2px 2px 3px #999;
   z-index:100;
 }
-
+p{
+  color:#eff3f7;
+  
+}
 .my-float{
 	margin-top:16px;
 }
@@ -160,11 +163,10 @@ header ul{
 
 
 h1 {
-  margin-left: 8rem; 
-  margin-right: 8rem; 
   text-align: center;
-  margin-top: 5rem;
-  color: #245501;
+  margin-top: 8rem;
+  color: 3px solid white;
+  height: 16em;
 }
 
 h2 {
@@ -172,7 +174,7 @@ h2 {
       margin-right: 2rem; 
       text-align: center;
       margin-top: 2rem;
-      color: #245501;
+      color: white;
 }
 .logo-link {
   display: none;
