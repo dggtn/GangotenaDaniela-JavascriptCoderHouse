@@ -10,6 +10,7 @@ alert ("Productos disponibles son Frutilla: 8usd el kilo,mantequillaAlmendras: 1
 
 productoElegido = prompt("Ingrese producto deseado (frutilla,mantequillaAlmendras,avellanas) e ingrese salir cuando no quiera elegir más productos")
 cantidadDeseada = prompt("Ingrese cantidad deseada")
+let totalApagar = 0
 
 while (productoElegido!= "salir" ){
     if (productoElegido == "frutilla"){
@@ -29,11 +30,15 @@ while (productoElegido!= "salir" ){
     cantidadDeseada = prompt("Ingrese cantidad deseada o ingrese salir si no eligió más productos")
 }
 
-let totalApagar = totalApagarFrutilla + totalApagarmantequillaAlmendras  + totalApagarAvellanas
 
-    alert (`el detalle de su compra es: 
+function total( totalApagarFrutilla, totalApagarmantequillaAlmendras, totalApagarAvellanas){
+    let resultado = totalApagarFrutilla +totalApagarmantequillaAlmendras+ totalApagarAvellanas;
+    return resultado;
+}
+
+alert (`el detalle de su compra es: 
 frutilla : ${totalApagarFrutilla}usd 
 mantequillaAlmendras: ${totalApagarmantequillaAlmendras}usd 
 avellanas: ${totalApagarAvellanas}usd 
-total a pagar es ${totalApagar}usd`)
+total a pagar es ${total( totalApagarFrutilla, totalApagarmantequillaAlmendras, totalApagarAvellanas)}usd`)
 
