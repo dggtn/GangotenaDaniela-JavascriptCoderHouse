@@ -19,7 +19,7 @@ while (productoElegido!= "salir" ){
         
     }
     else if (productoElegido == "mantequillaAlmendras"){
-        totalApagarMantequilla  = cantidadDeseada * mantequillaAlmendras;
+        totalApagarmantequillaAlmendras = cantidadDeseada * mantequillaAlmendras;
     
     }
     else {
@@ -28,10 +28,12 @@ while (productoElegido!= "salir" ){
     productoElegido = prompt("Ingrese producto deseado (frutilla,mantequillaAlmendras,avellanas) o ingrese salir cuando no quiera elegir más productos")
     cantidadDeseada = prompt("Ingrese cantidad deseada o ingrese salir si no eligió más productos")
 }
-let totalApagar = totalApagarFrutilla + totalApagarMantequilla  + totalApagarAvellanas
 
-alert (`el detalle de su compra es: 
+let totalApagar = totalApagarFrutilla + totalApagarmantequillaAlmendras  + totalApagarAvellanas
+
+    alert (`el detalle de su compra es: 
 frutilla : ${totalApagarFrutilla}usd 
-mantequillaAlmendras: ${totalApagarMantequilla}usd 
+mantequillaAlmendras: ${totalApagarmantequillaAlmendras}usd 
 avellanas: ${totalApagarAvellanas}usd 
 total a pagar es ${totalApagar}usd`)
+
