@@ -170,11 +170,19 @@ h1 {
 }
 
 h2 {
-      margin-left: 2rem; 
-      margin-right: 2rem; 
+      margin-left: 12rem; 
+      margin-right: 12rem; 
       text-align: center;
       margin-top: 2rem;
-      color: white;
+     
+}
+p{
+  margin-left: 12rem; 
+  margin-right: 12rem; 
+  text-align: center;
+  margin-top: 2rem;
+  color:50px solid black;
+
 }
 .logo-link {
   display: none;
