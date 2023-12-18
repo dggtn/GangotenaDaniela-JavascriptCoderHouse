@@ -9,10 +9,15 @@ body {
   flex-direction: column;
 }
 .inicio{
-  background-color:#addb8c;
+  
   width: 100%;
   padding: 0;
-
+  background-image: url(../img/mujerIndigena.jpg);
+  width: 100%; 
+  height: auto;
+  background-repeat: no-repeat;
+  background-size:cover;
+  position: sticky;
 }
 .float{
 	position:fixed;
@@ -71,6 +76,13 @@ button {
   background: #1a4301;
   cursor: pointer;
 }
+
+
+
+
+
+
+
 footer {
   width: 100%;
   margin-top: auto;
@@ -84,7 +96,6 @@ footer p {
   color: #f9fcff;
   padding-right: 2%;
 }
-
 
 
 .header {
