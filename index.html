@@ -1,119 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
     <link rel="stylesheet" href="./estilos/index.css" />
-    <script src="javascript.js/index.js"></script>
-    <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="./img/favicon.jpeg"
-  />
-  <meta
-    name="description"
-    content="Tienda de alimentos orgánicos de comercio justo en Ecuador"
-  />
-   
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.jpeg" />
+    <meta
+      name="description"
+      content="Tienda de alimentos orgánicos de comercio justo en Ecuador"
+    />
   </head>
-<body class="inicio">
-    <body>
-        <header class="header">
-          <a href="index.html">
-            <img class="logo" src="img/logo.jpeg" alt="logo" />
-          </a>
+  <body class="inicio">
+    <header class="header">
+      <a href="index.html">
+        <img class="logo" src="img/logo.jpeg" alt="logo" />
+      </a>
+      <a href="pages/historia.html">HISTORIA</a>
+      <a href="pages/comerciojusto.html">COMERCIO JUSTO</a>
+      <a href="pages/tienda.html">TIENDA</a>
+      <a href="pages/blog.html">BLOG</a>
+      <a href="pages/usuario.html"
+        ><img class="imagenesNavbar" src="img/uruario.png" alt="usuario"
+      /></a>
+      <a href="pages/favoritos.html"
+        ><img class="imagenesNavbar" src="img/favoritos.png" alt="favoritos"
+      /></a>
+      <a href="pages/carritodecompras.html"
+        ><img
+          class="imagenesNavbar"
+          src="img/carritoDecompras.png"
+          alt="carritodecompra"
+      /></a>
+    </header>
+
+    <header class="header-mobile">
+      <a class="logo-link" href="index.html">
+        <img class="logo" src="img/logo.jpeg" alt="logo" />
+      </a>
+      <input class="side-menu" type="checkbox" id="side-menu" />
+      <label class="hamb" for="side-menu"
+        ><i class="fa-solid fa-bars"></i
+      ></label>
+      <nav class="nav">
+        <ul class="menu">
           <a href="pages/historia.html">HISTORIA</a>
           <a href="pages/comerciojusto.html">COMERCIO JUSTO</a>
           <a href="pages/tienda.html">TIENDA</a>
           <a href="pages/blog.html">BLOG</a>
-          <a href="pages/usuario.html"><img class="imagenesNavbar" src="img/uruario.png" alt="usuario"/></a>
-          <a href="pages/favoritos.html"><img  class="imagenesNavbar" src="img/favoritos.png" alt="favoritos"/></a>
-          <a href="pages/carritodecompras.html"><img class="imagenesNavbar" src="img/carritoDecompras.png" alt="carritodecompra"/></a>
-        </header>
-      
-        <header class="header-mobile">
-          <a class="logo-link" href="index.html">
-            <img class="logo" src="img/logo.jpeg" alt="logo" />
-          </a>
-          <input class="side-menu" type="checkbox" id="side-menu" />
-          <label class="hamb" for="side-menu"><i class="fa-solid fa-bars"></i></label>
-          <nav class="nav">
-            <ul class="menu">
-                <a href="pages/historia.html">HISTORIA</a>
-                <a href="pages/comerciojusto.html">COMERCIO JUSTO</a>
-                <a href="pages/tienda.html">TIENDA</a>
-                <a href="pages/blog.html">BLOG</a>
-                <a href="pages/usuario.html"><img class="imagenesNavbar" src="img/uruario.png" alt="usuario"/></a>
-                <a href="pages/favoritos.html"><img  class="imagenesNavbar" src="img/favoritos.png" alt="favoritos"/></a>
-                <a href="pages/carritodecompras.html"><img class="imagenesNavbar" src="img/carritoDecompras.png" alt="carritodecompra"/></a>
-            </ul>
-          </nav>
-        </header>
-        <!-- <header class="header">
-            <input id="burger" type="checkbox" />
-            <label for="burger" class="burger"> ☰ </label>
-            <div class="navbar">
-              <a href="/index.html">
-                <img class="logo" src="img/logo.jpeg" alt="logo"/>
-              </a>
-              <a href="pages/historia.html">HISTORIA</a>
-                <a href="pages/comerciojusto.html">COMERCIO JUSTO</a>
-                <a href="pages/tienda.html">TIENDA</a>
-                <a href="pages/blog.html">BLOG</a>
-                <a href="usuario.html"><img src="img/uruario.png" alt="usuario"/></a>
-                <a href="favritos.html"><img src="img/favoritos.png" alt="favoritos"/></a>
-                <a href="carritodecompras.html"><img src="img/carritoDecompras.png" alt="carritodecompra"/></a>
-            </div>
-          </header> -->
-        <main>
-          <div>
-            <!-- Slideshow container -->
-<div class="slideshow-container">
+          <a href="pages/usuario.html"
+            ><img class="imagenesNavbar" src="img/uruario.png" alt="usuario"
+          /></a>
+          <a href="pages/favoritos.html"
+            ><img
+              class="imagenesNavbar"
+              src="img/favoritos.png"
+              alt="favoritos"
+          /></a>
+          <a href="pages/carritodecompras.html"
+            ><img
+              class="imagenesNavbar"
+              src="img/carritoDecompras.png"
+              alt="carritodecompra"
+          /></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <img src="./img/fondoinicio.JPG" style="width: 100%" />
+        <h1
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            size: 16em;
+          "
+        >
+          Juan Granel
+        </h1>
+        <h1
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            margin-top: 8em;
+          "
+        >
+          Aquí puedes encontrar productos orgánicos,coherentes y reales.
+        </h1>
+      </div>
 
-  <!-- Full-width images with number and caption text -->
-  <div>
-    <img src="./img/fondoinicio.JPG" style="width:100%">
-    <h1 style="position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);color:white;size: 16em;">Juan Granel</h1>
-    <h1 style="position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);color:white;margin-top: 8em;">Aquí puedes encontrar productos orgánicos,coherentes y reales.</h1>
-  </div>
-</div>
+      <div style="background-color: white">
+        <img
+          src="img/logo.jpeg"
+          style="text-align: center; margin-left: 28rem"
+        />
+        <h2 style="color: #1a4301">
+          Bienvenido a Juan Granel consumo Consciente!
+        </h2>
+        <p style="color: #1a4301">
+          Tenemos como objetivo desarrollar una red de comercio justo,
+          agricultura orgánica, productos locales y cero desperdicios. En un
+          espíritu de equidad y cooperación. En asociación con organizaciones
+          campesinas, grupos de productores y cooperativas indígenas, creamos
+          lazos de valor equitativos basados en el cumplimiento de exigentes
+          criterios sociales y ecológicos.
+        </p>
+      </div>
 
-  <div style=" background-color: white;">
-    <img src="img/logo.jpeg" style="text-align: center;margin-left:28rem;">
-    <h2 style="color:#1a4301;"> Bienvenido a Juan Granel consumo Consciente!</h2>
-    <p style="color:#1a4301;">Tenemos como objetivo desarrollar una red de comercio justo, agricultura orgánica, productos locales y cero desperdicios. En un espíritu de equidad y cooperación.
-En asociación con organizaciones campesinas, grupos de productores y cooperativas indígenas, creamos lazos de valor equitativos basados en el cumplimiento de exigentes criterios sociales y ecológicos.</p>   
-</div>
-
-<div>
-  <img src="./img/tiendacompleta.jpg" style="width:100%">
-  <h1 style="position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);color:white;size: 16em;">Juan Granel</h1>
-  <h1 style="position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);color:white;margin-top: 8em;">Aquí puedes encontrar productos orgánicos,coherentes y reales.</h1>
-</div>
-</div>
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://wa.me/%2B593999453806?text=Hola!%20quiero%20contactarme%20con%20Juan%20Granel%20" class="float" target="_blank">
-<i class="fa fa-whatsapp my-float"></i>
-</a>
-</div>
-        </main>
-        <footer>
-          <p>© 2023 Juan Granel. Todos los derechos reservados.</p>
-        </footer>
-      </body>
-      </html>
+      <div>
+        <img src="./img/tiendacompleta.jpg" style="width: 100%" />
+        <h1
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            size: 16em;
+          "
+        >
+          Juan Granel
+        </h1>
+        <h1
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            margin-top: 8em;
+          "
+        >
+          Aquí puedes encontrar productos orgánicos,coherentes y reales.
+        </h1>
+      </div>
+      <div>
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+        />
+        <a
+          href="https://wa.me/%2B593999453806?text=Hola!%20quiero%20contactarme%20con%20Juan%20Granel%20"
+          class="float"
+          target="_blank"
+        >
+          <i class="fa fa-whatsapp my-float"></i>
+        </a>
+      </div>
+    </main>
+    <footer>
+      <p>© 2023 Juan Granel. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+  <script src="javascript/index.js"></script>
+</html>

@@ -71,13 +71,6 @@ button {
   background: #1a4301;
   cursor: pointer;
 }
-
-
-
-
-
-
-
 footer {
   width: 100%;
   margin-top: auto;
@@ -91,6 +84,7 @@ footer p {
   color: #f9fcff;
   padding-right: 2%;
 }
+
 
 
 .header {
