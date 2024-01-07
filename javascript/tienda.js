@@ -172,6 +172,20 @@ function procesarOpcion(categoria) {
 }
 /*/
 
+function seleccionarProducto(nombre){
+    let productos = [];
+    alert(nombre+" se ha guardado con exito en el carrito de compras")
+    let productosString =  localStorage.getItem("productos");
+    if (productosString){
+        productos = JSON.parse(productosString);
+    }
+    
+    productos.push(nombre);
+
+    localStorage.setItem("productos",JSON.stringify(productos));
+
+}
+
 function productoFavoritoElegido(nombre){
 
     let favoritos = [];
