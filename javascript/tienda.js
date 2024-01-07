@@ -48,7 +48,7 @@ total a pagar es ${total( totalApagarFrutilla, totalApagarmantequillaAlmendras, 
 //objetos y sus funcionalidades:
 
 
-function TiendaEnLinea(categorias, productos) {
+/*/function TiendaEnLinea(categorias, productos) {
 
     this.categorias = categorias;
     this.productos = productos;
@@ -170,3 +170,24 @@ function procesarOpcion(categoria) {
     
         montoAPagar += tiendaEnLinea.buscarPrecioDeProducto(productoElegido) * cantidadElegida;
 }
+/*/
+
+function productoFavoritoElegido(nombre){
+
+    let favoritos = [];
+    alert("Tu producto("+nombre+" ) elegido se ha guardado con exito, lo podras ver en la sección favoritos")
+   
+    let favoritosString =  localStorage.getItem("favoritos");
+
+    if (favoritosString){
+        favoritos = JSON.parse(favoritosString);
+    }
+    
+    favoritos.push(nombre);
+
+    localStorage.setItem("favoritos",JSON.stringify(favoritos));
+
+    }
+
+
+
