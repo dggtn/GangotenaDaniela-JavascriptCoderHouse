@@ -4,8 +4,8 @@ function listaDeCompras(){
     let  ul = document.createElement('ul');
     productos.forEach((producto)=>{ 
         
-    let li = document.createElement('li');
-    li.innerHTML = producto;
+    let form = document.createElement('form');
+    form.innerHTML = producto;
     ul.appendChild(li);
     })
 
