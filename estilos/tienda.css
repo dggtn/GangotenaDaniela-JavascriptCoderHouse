@@ -67,6 +67,10 @@ button {
   border-radius: 10px;
   background: #1a4301;
   cursor: pointer;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  
 }
 
 
