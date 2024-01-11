@@ -189,19 +189,27 @@ function seleccionarProducto(nombre){
 function productoFavoritoElegido(nombre){
 
     let favoritos = [];
-    alert("Tu producto("+nombre+" ) elegido se ha guardado con exito, lo podras ver en la sección favoritos")
    
     let favoritosString =  localStorage.getItem("favoritos");
 
     if (favoritosString){
         favoritos = JSON.parse(favoritosString);
     }
-    
-    favoritos.push(nombre);
+    const favorito = favoritos.find((unFavorito) => unFavorito === nombre);
 
-    localStorage.setItem("favoritos",JSON.stringify(favoritos));
-
+    if (favorito){
+        let imagenCorazon = document.getElementById("corazon_" + nombre);
+        imagenCorazon.src = "../img/heart-regular.svg"; 
+        const index = favoritos.indexOf(nombre);
+        favoritos.splice(index,1)
+    } else{
+        let imagenCorazon = document.getElementById("corazon_" + nombre);
+        imagenCorazon.src = "../img/heart-solid.svg"; 
+        favoritos.push(nombre);
     }
+    localStorage.setItem("favoritos",JSON.stringify(favoritos));
+}
+    
 
 
 
