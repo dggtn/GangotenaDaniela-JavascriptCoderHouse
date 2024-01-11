@@ -209,7 +209,26 @@ function productoFavoritoElegido(nombre){
     }
     localStorage.setItem("favoritos",JSON.stringify(favoritos));
 }
-    
+   
+function cargarPantallaTienda(){
+    //leer el LS
+    let favoritos = [];
+   
+    let favoritosString =  localStorage.getItem("favoritos");
 
+    //transformarlo a objeto
+    if (favoritosString){
+        favoritos = JSON.parse(favoritosString);
+    }
+    //recorrer objeto
+    for(let i = 0; i< favoritos.length; i++){
+        let nombre = favoritos[i];
+        let imagenCorazon = document.getElementById("corazon_" + nombre);
+        imagenCorazon.src = "../img/heart-solid.svg"; 
+        console.log(imagenCorazon);
+    }
+}
+
+cargarPantallaTienda();
 
 
