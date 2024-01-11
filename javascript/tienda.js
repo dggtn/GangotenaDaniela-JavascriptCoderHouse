@@ -209,6 +209,23 @@ function productoFavoritoElegido(nombre){
     }
     localStorage.setItem("favoritos",JSON.stringify(favoritos));
 }
+
+function seleccionarProducto(nombre){
+
+    // GUARDAR EN EL LS EL PRODUCTO ELEGIDO
+    let productos = [];
+
+    let productosString  =  localStorage.getItem("productos");   
+    if (productosString) {
+        productos = JSON.parse(productosString);
+    }
+
+    // si no fue elegido antes, lo agrego al array y actualizo el LS
+    if (!productos.includes(nombre)) {
+        productos.push(nombre);
+        localStorage.setItem("productos", JSON.stringify(productos));
+    }
+}
    
 function cargarPantallaTienda(){
     //leer el LS

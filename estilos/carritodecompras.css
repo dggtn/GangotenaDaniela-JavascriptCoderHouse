@@ -14,6 +14,7 @@ body {
   padding: 0;
 
 }
+
 .float{
 	position:fixed;
 	width:60px;
@@ -62,15 +63,23 @@ input {
 
 button {
   font-family: "Poppins", sans-serif;
-  min-width: 25%;
-  padding: 2px;
   color: #ffffff;
   font-size: 19px;
   border-radius: 10px;
-  border: 2px solid;
   background: #1a4301;
   cursor: pointer;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  
 }
+
+
+
+
+
+
+
 footer {
   width: 100%;
   margin-top: auto;
@@ -84,7 +93,6 @@ footer p {
   color: #f9fcff;
   padding-right: 2%;
 }
-
 
 
 .header {
@@ -261,3 +269,181 @@ p{
       min-height: 85vh;
     }
   }
+* {
+  box-sizing: border-box;
+}
+ 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: #7EC855;
+  font-family: 'Roboto', sans-serif;
+}
+.shopping-cart {
+  width: 750px;
+  height: 423px;
+  margin: 80px auto;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+ 
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  height: 60px;
+  border-bottom: 1px solid #E1E8EE;
+  padding: 20px 30px;
+  color: #5E6977;
+  font-size: 18px;
+  font-weight: 400;
+}
+ 
+.item {
+  padding:0px;
+  height: 120px;
+  display: flex;
+}
+ 
+.item:nth-child(3) {
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+}
+
+.buttons {
+  position: relative;
+  padding-top: 30px;
+  margin-right: 60px;
+}
+.delete-btn,
+.like-btn {
+  display: inline-block;
+  Cursor: pointer;
+}
+.delete-btn {
+  width: 18px;
+  height: 17px;
+  background: url(&amp;quot;delete-icn.svg&amp;quot;) no-repeat center;
+}
+ 
+.like-btn {
+  position: absolute;
+  top: 9px;
+  left: 15px;
+  background: url('twitter-heart.png');
+  width: 60px;
+  height: 60px;
+  background-size: 2900%;
+  background-repeat: no-repeat;
+}
+
+.is-active {
+  animation-name: animate;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(28);
+  animation-fill-mode: forwards;
+}
+ 
+@keyframes animate {
+  0%   { background-position: left;  }
+  50%  { background-position: right; }
+  100% { background-position: right; }
+}
+
+.image {
+  margin-right: 50px;
+  
+}
+ 
+.description {
+  padding-top: 10px;
+  margin-right: 60px;
+  width: 115px;
+}
+ 
+.description span {
+  display: block;
+  font-size: 14px;
+  color: #43484D;
+  font-weight: 400;
+}
+ 
+.description span:first-child {
+  margin-bottom: 5px;
+}
+.description span:last-child {
+  font-weight: 300;
+  margin-top: 8px;
+  color: #86939E;
+}
+
+
+.discount-product {position: relative;}
+.discount-img-brief {
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.onsale {
+  background: #c87065 none repeat scroll 0 0;
+  border-radius: 50%;
+  float: left;
+  height: 112px;
+  margin: 5% 15% 0 25%;
+  padding-top: 30px;
+  text-align: center;
+  width: 112px;
+}
+.discount-info {
+  float: left;
+  margin-top: 45px;
+  padding: 0;
+  width: 40%;
+}
+.onsale span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  line-height: 14px;
+}
+.onsale-text {
+  font-style: italic;
+  padding-bottom: 12px;
+  position: relative;
+}
+.onsale-text::before {
+    background: #fff none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 20px;
+}
+.onsale-price {
+    padding-top: 10px;
+    font-weight: 700;
+}
+.discount-info h1 {
+  font-size: 45px;
+  font-weight: 900;
+  line-height: 35px;
+  margin-bottom: 15px;
+}
+.discount-2 .discount-product {
+  background: #fff none repeat scroll 0 0;
+  padding: 72px 20px;
+  position: inherit;
+}
+.discount-2 .discount-info {
+  float: none;
+  width: 100%;
+}
