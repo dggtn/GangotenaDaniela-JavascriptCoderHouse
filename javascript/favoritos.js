@@ -1,3 +1,15 @@
+function borrarFavorito(nombre){
+    let favoritosString =  localStorage.getItem("favoritos");
+    let favoritos = JSON.parse(favoritosString);
+    const index = favoritos.indexOf(nombre);
+    favoritos.splice(index,1);
+    localStorage.setItem("favoritos",JSON.stringify(favoritos)); 
+    const elemento = document.getElementById("favorito_" + nombre);
+
+    elemento.remove();
+
+}
+
 function listaDeFavoritos(){
 
     let favoritosString =  localStorage.getItem("favoritos");       
@@ -10,6 +22,7 @@ function listaDeFavoritos(){
         
         let item = document.createElement('div')
         item.classList.add("item");
+        item.setAttribute('id',"favorito_" + favorito)
         item.innerHTML = `
           <div class="buttons">
             <span class="delete-btn"></span>
@@ -31,12 +44,11 @@ function listaDeFavoritos(){
           </div>
         
           <div class="total-price"><p>$8 el kilo</p></div>
-          <button onclick="seleccionarProducto('${favorito}')">Comprar</button>
           <img
             id="corazon_${favorito}"
-            style="padding-left: 2em"
-            src="../img/heart-regular.svg"
-            onclick="productoFavoritoElegido('${favorito}')"
+            style="padding-left: 2em;height:3em;"
+            src="../img/trash-can-solid.svg"
+            onclick="borrarFavorito('${favorito}')"
           />    
         `
         contenedor.appendChild(item);
