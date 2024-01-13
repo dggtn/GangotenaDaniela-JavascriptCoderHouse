@@ -46,74 +46,121 @@ avellanas: ${totalApagarAvellanas}usd
 total a pagar es ${total( totalApagarFrutilla, totalApagarmantequillaAlmendras, totalApagarAvellanas)}usd`)/*/
 
 //objetos y sus funcionalidades:
-
-
-/*/function TiendaEnLinea(categorias, productos) {
-
-    this.categorias = categorias;
-    this.productos = productos;
-
-    this.buscarPrecioDeProducto = function(nombre) {
-        let producto = this.productos.find((producto) => producto.nombre == nombre);
-        return producto.precio;
+class Producto {
+    constructor(id, nombre, descripcion, imagen, precio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.precio = precio;
     }
-    this.obtenerProductosPorCategoria = function (nombre){
-        return this.productos.filter((producto)=>producto.categoria.nombre == nombre);
-     }
 }
 
-function Producto(nombre, precio, categoria) {
-    this.nombre = nombre;
-    this.precio = precio;
-    this.categoria = categoria;
+class TiendaEnLinea {
+
+    constructor(){
+        this.productos = [];
+    }
+    agregarProducto(producto){
+        this.productos.push(producto);
+    }
+
+    obtenerProductos() {
+        return this.productos;
+    }
 }
 
-function Categoria(nombre) {
-    this.nombre = nombre;
+let frutillas  = new Producto(1,"Frutillas","Al granel,Organica","../img/frutillas.png",8 );
+let avellanas = new Producto(2,"Avellanas","Al granel,naturales","../img/avellanas.png",54);
+let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","100% almendras","../img/mantequillaAlmendras.png",12);
+let mantequillaDeAvellanas = new Producto(4,"Mantequilla de Avellanas","Al granel,naturales","../img/avellanas.png",12.50 );
+
+
+let tiendaEnLinea = new TiendaEnLinea();
+tiendaEnLinea.agregarProducto(frutillas);
+tiendaEnLinea.agregarProducto(avellanas);
+tiendaEnLinea.agregarProducto(mantequillaDeAlmendras);
+tiendaEnLinea.agregarProducto(mantequillaDeAvellanas);
+
+mostrarProductos();
+
+function mostrarProductos(){
+    
+    let productos = tiendaEnLinea.obtenerProductos();
+        
+    const contenedor = document.getElementById("productosDeLaTienda");
+
+    for(let i = 0; i< productos.length; i++){
+
+        let producto = productos[i];
+        
+        let item = document.createElement('div')
+        item.classList.add("item");
+        item.setAttribute('id',"producto_" + producto.id)
+        item.innerHTML = `
+<div><h5>${producto.nombre}</h5></div> 
+<div class="image">
+    <img
+    style="height: 6em";
+    src = "${producto.imagen}"
+    alt="frutillas"
+    />
+</div>
+
+<div class="description">
+    <span>${producto.descripcion}</span>
+</div>
+
+<div class="total-price">
+    <p>$ ${producto.precio} el kilo</p>
+</div>
+<button onclick="seleccionarProducto('${producto.id}')">Comprar</button>
+<img
+    id="corazon_${producto.id}"
+    style="padding-left: 2em";height: 3em";
+    src="../img/heart-regular.svg"
+    onclick="productoFavoritoElegido('${producto.id}')"
+/>`
+contenedor.appendChild(item);
 }
 
-
-
+}
 
 //instanciación de objetos:
 
-let frutasSecas = new Categoria("Frutas Secas");
-let lacteos = new Categoria("Lacteos");
-let especias = new Categoria("Especias");
-let frutasDesh = new Categoria("Frutas Deshidratadas");
-let mantequilla = new Categoria("Mantequillas de Frutos Secos");
+//let frutasSecas = new Categoria("Frutas Secas");
+//let lacteos = new Categoria("Lacteos");
+//let especias = new Categoria("Especias");
+//let frutasDesh = new Categoria("Frutas Deshidratadas");
+//let mantequilla = new Categoria("Mantequillas de Frutos Secos");
 
 
-let mantequillaDeAlmendras = new Producto("Mantequilla de Almendras", 12,mantequilla );
-let mantequillaDeAvellanas = new Producto("Mantequilla de Avellanas", 12.50,mantequilla );
-let mantequillaDeCashew = new Producto("Mantequilla de Cashew", 13,mantequilla );
+//let mantequillaDeAvellanas = new Producto("Mantequilla de Avellanas", 12.50,mantequilla );
+//let mantequillaDeCashew = new Producto("Mantequilla de Cashew", 13,mantequilla );
 
-let almendras = new Producto("Almendras", 21, frutasSecas);
-let nueces = new Producto("Nueces", 18, frutasSecas);
-let avellanas = new Producto("Avellanas", 54, frutasSecas);
+//let almendras = new Producto("Almendras", 21, frutasSecas);
+//let nueces = new Producto("Nueces", 18, frutasSecas);
 
-let frutillas = new Producto("Frutillas", 8.50, frutasDesh);
-let ananas = new Producto("Ananas", 4.5, frutasDesh);
-let moras = new Producto("Moras", 4.5, frutasDesh);
+//let ananas = new Producto("Ananas", 4.5, frutasDesh);
+//let moras = new Producto("Moras", 4.5, frutasDesh);
 
-let lecheAlmendras = new Producto("Leche de Almendras", 5.5, lacteos);
-let lecheCoco = new Producto("Leche de Coco", 5.5, lacteos);
-let lecheAvena= new Producto("Leche de Avena", 5.5, lacteos);
+//let lecheAlmendras = new Producto("Leche de Almendras", 5.5, lacteos);
+//let lecheCoco = new Producto("Leche de Coco", 5.5, lacteos);
+//let lecheAvena= new Producto("Leche de Avena", 5.5, lacteos);
 
-let canela = new Producto("Canela", 2.5, especias);
-let pimenton = new Producto("Pimentón", 2.5, especias);
-let salHimalaya = new Producto("Sal Himalaya", 4.5, especias);
+//let canela = new Producto("Canela", 2.5, especias);
+//let pimenton = new Producto("Pimentón", 2.5, especias);
+//let salHimalaya = new Producto("Sal Himalaya", 4.5, especias);
 
-let categorias = [frutasSecas, frutasDesh, especias, lacteos, mantequilla];
-let productos = [mantequillaDeAlmendras, mantequillaDeAvellanas, mantequillaDeCashew, almendras, nueces, avellanas, frutillas,
-     ananas, moras, lecheAlmendras, lecheCoco, lecheAvena, canela, pimenton, salHimalaya];
+//let categorias = [frutasSecas, frutasDesh, especias, lacteos, mantequilla];
+//let productos = [mantequillaDeAlmendras, mantequillaDeAvellanas, mantequillaDeCashew, almendras, nueces, avellanas, frutillas,
+    // ananas, moras, lecheAlmendras, lecheCoco, lecheAvena, canela, pimenton, salHimalaya];
 
 
-let tiendaEnLinea = new TiendaEnLinea(categorias, productos);
 
 //Ejecución del programa:
 
-let mensajeDeBienvenida =`Bienvenidos a la tienda en linea
+/*/let mensajeDeBienvenida =`Bienvenidos a la tienda en linea
 Escribe el numero de la opción que buscas:
 1 -Frutas Secas
 2 -Lacteos
@@ -169,8 +216,15 @@ function procesarOpcion(categoria) {
         cantidadElegida = prompt("Ingrese la cantidad deseada");
     
         montoAPagar += tiendaEnLinea.buscarPrecioDeProducto(productoElegido) * cantidadElegida;
-}
-/*/
+}/*/
+
+
+
+
+
+//TERCERA PRE ENTREGA:
+
+
 
 function seleccionarProducto(nombre){
     let productos = [];

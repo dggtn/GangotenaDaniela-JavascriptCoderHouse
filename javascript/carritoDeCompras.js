@@ -57,11 +57,15 @@ function listaDeCompras(){
             <span>${producto}</span>
             <span>Orgánica</span>
           </div>
-        
+          <div style="padding-left: 1em;height:2em;padding-right: 1em;">
+          <label id=${producto} for="quantity">Elige tu cantidad en kg:</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="10">
+          <input type="submit">
+          </div>
           <div class="total-price"><p>$8 el kilo</p></div>
           <img
             id="corazon_${producto}"
-            style="padding-left: 2em;height:3em;"
+            style="padding-left: 1em;height:2em;padding-right: 1em;"
             src="../img/trash-can-solid.svg"
             onclick="borrarCompra('${producto}')"
           />    
