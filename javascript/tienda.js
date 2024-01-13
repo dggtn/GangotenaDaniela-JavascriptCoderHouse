@@ -161,6 +161,10 @@ class TiendaEnLinea {
     obtenerProductos() {
         return this.productos;
     }
+
+    obtenerProductoPorId(id){
+        return this.productos.find((producto) => producto.id == id )
+    }
 }
 
 let frutillas  = new Producto(1,"Frutillas","Al granel,Organica","../img/frutillas.png",8 );
@@ -233,7 +237,7 @@ function seleccionarProducto(nombre){
 
 }
 
-function productoFavoritoElegido(nombre){
+function productoFavoritoElegido(id){
 
     let favoritos = [];
    
@@ -242,17 +246,20 @@ function productoFavoritoElegido(nombre){
     if (favoritosString){
         favoritos = JSON.parse(favoritosString);
     }
-    const favorito = favoritos.find((unFavorito) => unFavorito === nombre);
+    const favorito = favoritos.find((unFavorito) => unFavorito.id === Number(id));
 
     if (favorito){
-        let imagenCorazon = document.getElementById("corazon_" + nombre);
+        let imagenCorazon = document.getElementById("corazon_" + favorito.id);
         imagenCorazon.src = "../img/heart-regular.svg"; 
-        const index = favoritos.indexOf(nombre);
+
+        let favoritosPorId = favoritos.map((unFavorito) => unFavorito.id)
+        const index = favoritosPorId.indexOf(Number(id));
         favoritos.splice(index,1)
     } else{
-        let imagenCorazon = document.getElementById("corazon_" + nombre);
+        let nuevoFavorito = tiendaEnLinea.obtenerProductoPorId(id);
+        let imagenCorazon = document.getElementById("corazon_" + nuevoFavorito.id);
         imagenCorazon.src = "../img/heart-solid.svg"; 
-        favoritos.push(nombre);
+        favoritos.push(nuevoFavorito);
     }
     localStorage.setItem("favoritos",JSON.stringify(favoritos));
 }
@@ -286,8 +293,8 @@ function cargarPantallaTienda(){
     }
     //recorrer objeto
     for(let i = 0; i< favoritos.length; i++){
-        let nombre = favoritos[i];
-        let imagenCorazon = document.getElementById("corazon_" + nombre);
+        let favorito = favoritos[i];
+        let imagenCorazon = document.getElementById("corazon_" + favorito.id);
         imagenCorazon.src = "../img/heart-solid.svg"; 
         console.log(imagenCorazon);
     }
