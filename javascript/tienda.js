@@ -46,86 +46,6 @@ avellanas: ${totalApagarAvellanas}usd
 total a pagar es ${total( totalApagarFrutilla, totalApagarmantequillaAlmendras, totalApagarAvellanas)}usd`)/*/
 
 //objetos y sus funcionalidades:
-class Producto {
-    constructor(id, nombre, descripcion, imagen, precio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.imagen = imagen;
-        this.precio = precio;
-    }
-}
-
-class TiendaEnLinea {
-
-    constructor(){
-        this.productos = [];
-    }
-    agregarProducto(producto){
-        this.productos.push(producto);
-    }
-
-    obtenerProductos() {
-        return this.productos;
-    }
-}
-
-let frutillas  = new Producto(1,"Frutillas","Al granel,Organica","../img/frutillas.png",8 );
-let avellanas = new Producto(2,"Avellanas","Al granel,naturales","../img/avellanas.png",54);
-let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","100% almendras","../img/mantequillaAlmendras.png",12);
-let mantequillaDeAvellanas = new Producto(4,"Mantequilla de Avellanas","Al granel,naturales","../img/avellanas.png",12.50 );
-
-
-let tiendaEnLinea = new TiendaEnLinea();
-tiendaEnLinea.agregarProducto(frutillas);
-tiendaEnLinea.agregarProducto(avellanas);
-tiendaEnLinea.agregarProducto(mantequillaDeAlmendras);
-tiendaEnLinea.agregarProducto(mantequillaDeAvellanas);
-
-mostrarProductos();
-
-function mostrarProductos(){
-    
-    let productos = tiendaEnLinea.obtenerProductos();
-        
-    const contenedor = document.getElementById("productosDeLaTienda");
-
-    for(let i = 0; i< productos.length; i++){
-
-        let producto = productos[i];
-        
-        let item = document.createElement('div')
-        item.classList.add("item");
-        item.setAttribute('id',"producto_" + producto.id)
-        item.innerHTML = `
-<div><h5>${producto.nombre}</h5></div> 
-<div class="image">
-    <img
-    style="height: 6em";
-    src = "${producto.imagen}"
-    alt="frutillas"
-    />
-</div>
-
-<div class="description">
-    <span>${producto.descripcion}</span>
-</div>
-
-<div class="total-price">
-    <p>$ ${producto.precio} el kilo</p>
-</div>
-<button onclick="seleccionarProducto('${producto.id}')">Comprar</button>
-<img
-    id="corazon_${producto.id}"
-    style="padding-left: 2em";height: 3em";
-    src="../img/heart-regular.svg"
-    onclick="productoFavoritoElegido('${producto.id}')"
-/>`
-contenedor.appendChild(item);
-}
-
-}
-
 //instanciación de objetos:
 
 //let frutasSecas = new Categoria("Frutas Secas");
@@ -218,13 +138,86 @@ function procesarOpcion(categoria) {
         montoAPagar += tiendaEnLinea.buscarPrecioDeProducto(productoElegido) * cantidadElegida;
 }/*/
 
-
-
-
-
 //TERCERA PRE ENTREGA:
+class Producto {
+    constructor(id, nombre, descripcion, imagen, precio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.precio = precio;
+    }
+}
+
+class TiendaEnLinea {
+
+    constructor(){
+        this.productos = [];
+    }
+    agregarProducto(producto){
+        this.productos.push(producto);
+    }
+
+    obtenerProductos() {
+        return this.productos;
+    }
+}
+
+let frutillas  = new Producto(1,"Frutillas","Al granel,Organica","../img/frutillas.png",8 );
+let avellanas = new Producto(2,"Avellanas","Al granel,naturales","../img/avellanas.png",54);
+let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","100% almendras","../img/mantequillaAlmendras.png",12);
+let mantequillaDeAvellanas = new Producto(4,"Mantequilla de Avellanas","Al granel,naturales","../img/avellanas.png",12.50 );
 
 
+let tiendaEnLinea = new TiendaEnLinea();
+tiendaEnLinea.agregarProducto(frutillas);
+tiendaEnLinea.agregarProducto(avellanas);
+tiendaEnLinea.agregarProducto(mantequillaDeAlmendras);
+tiendaEnLinea.agregarProducto(mantequillaDeAvellanas);
+
+mostrarProductos();
+
+function mostrarProductos(){
+    
+    let productos = tiendaEnLinea.obtenerProductos();
+        
+    const contenedor = document.getElementById("productosDeLaTienda");
+
+    for(let i = 0; i< productos.length; i++){
+
+        let producto = productos[i];
+        
+        let item = document.createElement('div')
+        item.classList.add("item");
+        item.setAttribute('id',"producto_" + producto.id)
+        item.innerHTML = `
+<div><h5>${producto.nombre}</h5></div> 
+<div class="image">
+    <img
+    style="height: 6em";
+    src = "${producto.imagen}"
+    alt="frutillas"
+    />
+</div>
+
+<div class="description">
+    <span>${producto.descripcion}</span>
+</div>
+
+<div class="total-price">
+    <p>$ ${producto.precio} el kilo</p>
+</div>
+<button onclick="seleccionarProducto('${producto.id}')">Comprar</button>
+<img
+    id="corazon_${producto.id}"
+    style="padding-left: 2em";height: 3em";
+    src="../img/heart-regular.svg"
+    onclick="productoFavoritoElegido('${producto.id}')"
+/>`
+contenedor.appendChild(item);
+}
+
+}
 
 function seleccionarProducto(nombre){
     let productos = [];
@@ -301,5 +294,16 @@ function cargarPantallaTienda(){
 }
 
 cargarPantallaTienda();
+
+
+
+
+
+
+
+
+
+
+
 
 
