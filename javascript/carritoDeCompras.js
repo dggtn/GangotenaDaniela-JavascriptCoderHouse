@@ -54,9 +54,8 @@ function listaDeCompras(){
           </div>
         
           <div class="description">
-            <span>Al granel</span>
+            <span>${producto.nombre}</span>
             <span>${producto.descripcion}</span>
-            <span>Orgánica</span>
           </div>
           <div style="padding-left: 1em;height:2em;padding-right: 1em;">
           <label for="quantity">Elige tu cantidad en kg:</label>

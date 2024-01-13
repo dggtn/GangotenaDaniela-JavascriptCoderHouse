@@ -37,6 +37,7 @@ function listaDeFavoritos(){
           </div>
         
           <div class="description">
+            <span>${favorito.nombre}</span>
             <span>${favorito.descripcion}</span>
           </div>
         

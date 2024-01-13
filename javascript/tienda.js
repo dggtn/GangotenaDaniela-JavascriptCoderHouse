@@ -170,7 +170,7 @@ class TiendaEnLinea {
 let frutillas  = new Producto(1,"Frutillas","Al granel,Organica","../img/frutillas.png",8 );
 let avellanas = new Producto(2,"Avellanas","Al granel,naturales","../img/avellanas.png",54);
 let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","100% almendras","../img/mantequillaAlmendras.png",12);
-let mantequillaDeAvellanas = new Producto(4,"Mantequilla de Avellanas","Al granel,naturales","../img/avellanas.png",12.50 );
+let mantequillaDeAvellanas = new Producto(4,"Mantequilla de Avellanas","Al granel,naturales","../img/avellanas.png",12 );
 
 
 let tiendaEnLinea = new TiendaEnLinea();
@@ -209,9 +209,8 @@ function mostrarProductos(){
       </div>
       
       <div class="description">
-        <span>Al granel</span>
+        <span>${producto.nombre}</span>
         <span>${producto.descripcion}</span>
-        <span>Orgánica</span>
       </div>
 
       <div class="total-price"><p>${producto.precio} el kilo</p></div>
