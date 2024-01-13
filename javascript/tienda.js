@@ -233,17 +233,20 @@ contenedor.appendChild(item);
 
 function seleccionarProducto(id){
     let productos = [];
-    let producto = tiendaEnLinea.obtenerProductoPorId(id);
     let productosString =  localStorage.getItem("productos");
     if (productosString){
         productos = JSON.parse(productosString);
     }
-    console.log(producto);
     
-    productos.push(producto);
-
-    localStorage.setItem("productos",JSON.stringify(productos));
-    alert(producto.nombre +" se ha guardado con exito en el carrito de compras")
+    const producto = productos.find((producto)=>producto.id === Number(id))
+    if(producto) {
+        alert ("El producto ya ha sido agregado al carrito")
+    } else {
+        let productoAgregado = tiendaEnLinea.obtenerProductoPorId(id);
+        productos.push(productoAgregado);
+        alert(productoAgregado.nombre +" se ha guardado con exito en el carrito de compras");
+        localStorage.setItem("productos",JSON.stringify(productos));
+    }
 }
 
 function productoFavoritoElegido(id){
