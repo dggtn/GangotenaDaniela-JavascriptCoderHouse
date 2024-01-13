@@ -195,46 +195,56 @@ function mostrarProductos(){
         item.classList.add("item");
         item.setAttribute('id',"producto_" + producto.id)
         item.innerHTML = `
-<div><h5>${producto.nombre}</h5></div> 
-<div class="image">
-    <img
-    style="height: 6em";
-    src = "${producto.imagen}"
-    alt="frutillas"
-    />
-</div>
+        <div class="buttons">
+        <span class="delete-btn"></span>
+        <span class="like-btn"></span>
+      </div>
+      
+      <div class="image">
+        <img
+          style="height: 6em"
+          src="${producto.imagen}"
+          alt="${producto.nombre}"
+        />
+      </div>
+      
+      <div class="description">
+        <span>Al granel</span>
+        <span>${producto.descripcion}</span>
+        <span>Orgánica</span>
+      </div>
 
-<div class="description">
-    <span>${producto.descripcion}</span>
+      <div class="total-price"><p>${producto.precio} el kilo</p></div>
+<div>
+<button onclick="seleccionarProducto(${producto.id})">Comprar</button>
 </div>
-
-<div class="total-price">
-    <p>$ ${producto.precio} el kilo</p>
-</div>
-<button onclick="seleccionarProducto('${producto.id}')">Comprar</button>
+<div>
 <img
-    id="corazon_${producto.id}"
-    style="padding-left: 2em";height: 3em";
-    src="../img/heart-regular.svg"
-    onclick="productoFavoritoElegido('${producto.id}')"
-/>`
+  id="corazon_${producto.id}"
+  style="padding-left: 1em;height:2em;padding-right: 1em;"
+  src="../img/heart-regular.svg"
+  onclick="productoFavoritoElegido(${producto.id})"
+/>  
+</div>`
 contenedor.appendChild(item);
 }
 
 }
 
-function seleccionarProducto(nombre){
+
+function seleccionarProducto(id){
     let productos = [];
-    alert(nombre+" se ha guardado con exito en el carrito de compras")
+    let producto = tiendaEnLinea.obtenerProductoPorId(id);
     let productosString =  localStorage.getItem("productos");
     if (productosString){
         productos = JSON.parse(productosString);
     }
+    console.log(producto);
     
-    productos.push(nombre);
+    productos.push(producto);
 
     localStorage.setItem("productos",JSON.stringify(productos));
-
+    alert(producto.nombre +" se ha guardado con exito en el carrito de compras")
 }
 
 function productoFavoritoElegido(id){
@@ -264,22 +274,6 @@ function productoFavoritoElegido(id){
     localStorage.setItem("favoritos",JSON.stringify(favoritos));
 }
 
-function seleccionarProducto(nombre){
-
-    // GUARDAR EN EL LS EL PRODUCTO ELEGIDO
-    let productos = [];
-
-    let productosString  =  localStorage.getItem("productos");   
-    if (productosString) {
-        productos = JSON.parse(productosString);
-    }
-
-    // si no fue elegido antes, lo agrego al array y actualizo el LS
-    if (!productos.includes(nombre)) {
-        productos.push(nombre);
-        localStorage.setItem("productos", JSON.stringify(productos));
-    }
-}
    
 function cargarPantallaTienda(){
     //leer el LS

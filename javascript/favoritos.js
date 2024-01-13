@@ -1,13 +1,12 @@
-function borrarFavorito(nombre){
+function borrarFavorito(id){
     let favoritosString =  localStorage.getItem("favoritos");
     let favoritos = JSON.parse(favoritosString);
-    const index = favoritos.indexOf(nombre);
-    favoritos.splice(index,1);
+    let favoritosPorId = favoritos.map((unFavorito) => unFavorito.id)
+    const index = favoritosPorId.indexOf(Number(id));
+    favoritos.splice(index,1)
     localStorage.setItem("favoritos",JSON.stringify(favoritos)); 
-    const elemento = document.getElementById("favorito_" + nombre);
-
+    const elemento = document.getElementById("favorito_" + id);
     elemento.remove();
-
 }
 
 function listaDeFavoritos(){
@@ -22,7 +21,7 @@ function listaDeFavoritos(){
         
         let item = document.createElement('div')
         item.classList.add("item");
-        item.setAttribute('id',"favorito_" + favorito)
+        item.setAttribute('id',"favorito_" + favorito.id)
         item.innerHTML = `
           <div class="buttons">
             <span class="delete-btn"></span>
@@ -32,23 +31,21 @@ function listaDeFavoritos(){
           <div class="image">
             <img
               style="height: 6em"
-              src="../img/${favorito}.png"
-              alt="${favorito}"
+              src="${favorito.imagen}"
+              alt="${favorito.nombre}"
             />
           </div>
         
           <div class="description">
-            <span>Al granel</span>
-            <span>${favorito}</span>
-            <span>Orgánica</span>
+            <span>${favorito.descripcion}</span>
           </div>
         
-          <div class="total-price"><p>$8 el kilo</p></div>
+          <div class="total-price"><p>${favorito.precio}el kilo</p></div>
           <img
-            id="corazon_${favorito}"
+            id="corazon_${favorito.id}"
             style="padding-left: 2em;height:3em;"
             src="../img/trash-can-solid.svg"
-            onclick="borrarFavorito('${favorito}')"
+            onclick="borrarFavorito('${favorito.id}')"
           />    
         `
         contenedor.appendChild(item);

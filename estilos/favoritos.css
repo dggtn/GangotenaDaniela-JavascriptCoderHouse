@@ -283,7 +283,6 @@ body {
 }
 .shopping-cart {
   width: 750px;
-  height: 423px;
   margin: 80px auto;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
@@ -303,8 +302,7 @@ body {
  
 .item {
   padding:0px;
-  height: 120px;
-  display: flex;
+    display: flex;
 }
  
 .item:nth-child(3) {

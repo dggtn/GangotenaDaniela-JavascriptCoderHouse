@@ -14,13 +14,14 @@
 }
 
 listaDeCompras();/*/
-function borrarCompra(nombre){
+function borrarCompra(id){
     let productosString =  localStorage.getItem("productos");
     let productos = JSON.parse(productosString );
-    const index = productos.indexOf(nombre);
+    let productosPorId = favoritos.map((unProducto) => unProducto.id)
+    const index = productosPorId.indexOf(Number(id));
     productos.splice(index,1);
     localStorage.setItem("productos",JSON.stringify(productos)); 
-    const elemento = document.getElementById("productos_" + nombre);
+    const elemento = document.getElementById("productos_" + id);
     elemento.remove();
 
 }
@@ -37,7 +38,7 @@ function listaDeCompras(){
         
         let item = document.createElement('div')
         item.classList.add("item");
-        item.setAttribute('id',"productos_" + producto)
+        item.setAttribute('id',"productos_" + producto.id)
         item.innerHTML = `
           <div class="buttons">
             <span class="delete-btn"></span>
@@ -47,27 +48,27 @@ function listaDeCompras(){
           <div class="image">
             <img
               style="height: 6em"
-              src="../img/${producto}.png"
-              alt="${producto}"
+              src="${producto.imagen}"
+              alt="${producto.nombre}"
             />
           </div>
         
           <div class="description">
             <span>Al granel</span>
-            <span>${producto}</span>
+            <span>${producto.descripcion}</span>
             <span>Orgánica</span>
           </div>
           <div style="padding-left: 1em;height:2em;padding-right: 1em;">
-          <label id=${producto} for="quantity">Elige tu cantidad en kg:</label>
+          <label for="quantity">Elige tu cantidad en kg:</label>
           <input type="number" id="quantity" name="quantity" min="1" max="10">
           <input type="submit">
           </div>
-          <div class="total-price"><p>$8 el kilo</p></div>
+          <div class="total-price"><p>${producto.precio} el kilo</p></div>
           <img
-            id="corazon_${producto}"
+            id="corazon_${producto.id}"
             style="padding-left: 1em;height:2em;padding-right: 1em;"
             src="../img/trash-can-solid.svg"
-            onclick="borrarCompra('${producto}')"
+            onclick="borrarCompra(${producto.id})"
           />    
         `
         contenedor.appendChild(item);
