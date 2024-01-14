@@ -169,15 +169,17 @@ class TiendaEnLinea {
 
 let frutillas  = new Producto(1,"Frutillas","Al granel,Organica","../img/frutillas.png",8 );
 let avellanas = new Producto(2,"Avellanas","Al granel,naturales","../img/avellanas.png",54);
-let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","100% almendras","../img/mantequillaAlmendras.png",12);
-let mantequillaDeAvellanas = new Producto(4,"Mantequilla de Avellanas","Al granel,naturales","../img/avellanas.png",12 );
+let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","100% almendras","../img/mantequillaAlmendras.jpg",12);
+let mantequillaDePistachos = new Producto(4,"Mantequilla de Pistachos","Al granel,naturales","../img/mantequillaPistacho.jpg",12 );
+let granola = new Producto(5,"Granola","Al granel,natural","../img/granola.jpg",12 );
 
 
 let tiendaEnLinea = new TiendaEnLinea();
 tiendaEnLinea.agregarProducto(frutillas);
 tiendaEnLinea.agregarProducto(avellanas);
 tiendaEnLinea.agregarProducto(mantequillaDeAlmendras);
-tiendaEnLinea.agregarProducto(mantequillaDeAvellanas);
+tiendaEnLinea.agregarProducto(mantequillaDePistachos);
+tiendaEnLinea.agregarProducto(granola);
 
 mostrarProductos();
 
