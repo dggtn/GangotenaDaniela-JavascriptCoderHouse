@@ -17,14 +17,16 @@ listaDeCompras();/*/
 function borrarCompra(id){
     let productosString =  localStorage.getItem("productos");
     let productos = JSON.parse(productosString );
-    let productosPorId = favoritos.map((unProducto) => unProducto.id)
+    let productosPorId = productos.map((unProducto) => unProducto.id)
     const index = productosPorId.indexOf(Number(id));
     productos.splice(index,1);
     localStorage.setItem("productos",JSON.stringify(productos)); 
     const elemento = document.getElementById("productos_" + id);
     elemento.remove();
-
+    calcularTotalDeCompra();
 }
+
+
 
 function listaDeCompras(){
     
