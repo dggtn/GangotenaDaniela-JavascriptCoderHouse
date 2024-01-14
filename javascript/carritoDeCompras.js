@@ -35,7 +35,6 @@ function listaDeCompras(){
     for(let i = 0; i< productos.length; i++){
 
         let producto = productos[i];
-        
         let item = document.createElement('div')
         item.classList.add("item");
         item.setAttribute('id',"productos_" + producto.id)
@@ -59,8 +58,7 @@ function listaDeCompras(){
           </div>
           <div style="padding-left: 1em;height:2em;padding-right: 1em;">
           <label for="quantity">Elige tu cantidad en kg:</label>
-          <input type="number" id="quantity" name="quantity" min="1" max="10">
-          <input type="submit">
+          <input onchange="elegirCantidad(${producto.id})" type="number" id="cantidad_${producto.id}" name="quantity" min="1" max="10" value="${producto.cantidad}">
           </div>
           <div class="total-price"><p>${producto.precio} el kilo</p></div>
           <img
@@ -68,7 +66,9 @@ function listaDeCompras(){
             style="padding-left: 1em;height:2em;padding-right: 1em;"
             src="../img/trash-can-solid.svg"
             onclick="borrarCompra(${producto.id})"
-          />    
+          /> 
+          </div>
+           
         `
         contenedor.appendChild(item);
     }
@@ -76,3 +76,29 @@ function listaDeCompras(){
 }
 
 listaDeCompras();
+
+
+function elegirCantidad (id){
+
+  let cantidad = document.getElementById("cantidad_" + id).value;
+  let productosString  =  localStorage.getItem("productos");       
+  let productos = JSON.parse(productosString);
+  let producto = productos.find((producto) => producto.id === Number(id) );
+  producto.cantidad = cantidad;
+  localStorage.setItem("productos",JSON.stringify(productos)); 
+  calcularTotalDeCompra();
+}
+
+function calcularTotalDeCompra(){
+  let productosString =  localStorage.getItem("productos");
+  let productos = JSON.parse(productosString);
+  let precioTotal = 0;
+  for(let i = 0; i< productos.length; i++){
+    let producto = productos[i];
+    precioTotal += producto.precio * producto.cantidad;
+}
+let totalApagar = document.getElementById("totalApagar") 
+totalApagar.innerHTML = precioTotal;
+
+}
+calcularTotalDeCompra();

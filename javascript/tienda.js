@@ -245,8 +245,9 @@ function seleccionarProducto(id){
         alert ("El producto ya ha sido agregado al carrito")
     } else {
         let productoAgregado = tiendaEnLinea.obtenerProductoPorId(id);
-        productos.push(productoAgregado);
-        alert(productoAgregado.nombre +" se ha guardado con exito en el carrito de compras");
+        let item = {...productoAgregado, cantidad: 1};
+        productos.push(item);
+        alert(item.nombre +" se ha guardado con exito en el carrito de compras");
         localStorage.setItem("productos",JSON.stringify(productos));
     }
 }
