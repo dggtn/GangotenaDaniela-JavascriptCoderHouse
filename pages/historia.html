@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Historia</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.jpeg" />
+    <title>Tienda</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.jpeg" />
     <meta
       name="description"
       content="Tienda de alimentos orgánicos de comercio justo en Ecuador"
     />
-    <link rel="stylesheet" href="../estilos/historia.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../estilos/index.css" />
   </head>
   <body class="inicio">
     <header class="header">
@@ -23,64 +29,100 @@
       <a href="../pages/usuario.html"
         ><img class="imagenesNavbar" src="../img/uruario.png" alt="usuario"
       /></a>
-      <a href="../pages/favoritos.html"
-            >FAVORITOS</a>
-      <a href="../pages/carritodecompras.html"
-        ><img
+      <a href="../pages/favoritos.html">FAVORITOS</a>
+      <a
+        class="btn"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
+        <img
           class="imagenesNavbar"
           src="../img/carritoDecompras.png"
           alt="carritodecompra"
       /></a>
     </header>
-
-    <header class="header-mobile">
-      <a class="logo-link" href="../index.html">
-        <img class="logo" src="img/logo.jpeg" alt="logo" />
-      </a>
-      <input class="side-menu" type="checkbox" id="side-menu" />
-      <label class="hamb" for="side-menu"
-        ><i class="fa-solid fa-bars"></i
-      ></label>
-      <nav class="nav">
-        <ul class="menu">
-          <a href="../pages/historia.html">HISTORIA</a>
-          <a href="../pages/comerciojusto.html">COMERCIO JUSTO</a>
-          <a href="../pages/tienda.html">TIENDA</a>
-          <a href="../pages/blog.html">BLOG</a>
-          <a href="../pages/usuario.html"
-            ><img class="imagenesNavbar" src="../img/uruario.png" alt="usuario"
-          /></a>
-          <a href="../pages/favoritos.html"
-            >FAVORITOS</a>
-          <a href="../pages/carritodecompras.html"
-            ><img
-              class="imagenesNavbar"
-              src="../img/carritoDecompras.png"
-              alt="carritodecompra"
-          /></a>
-        </ul>
-      </nav>
-    </header>
     <main>
       <div>
-          <h1>Bienvenido a Juan Granel consumo Consciente!</h1> 
-           <h2>Tenemos como objetivo desarrollar una red de comercio justo, agricultura orgánica, productos locales y cero desperdicios.</h2>
-          <h3 stye="text-align:center;padding:2em;"> En un espíritu de equidad y cooperación.En asociación con organizaciones campesinas, grupos de productores y cooperativas indígenas, creamos lazos de valor 
-            equitativos basados en el cumplimiento de exigentes criterios sociales y ecológicos.
-          </h3>
-        </div>
-      <div>
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-        />
-        <a
-          href="https://wa.me/%2B593999453806?text=Hola!%20quiero%20contactarme%20con%20Juan%20Granel%20"
-          class="float"
-          target="_blank"
+        <img src="../img/fondoinicio.JPG" style="width: 100%" />
+        <h1
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            size: 16em;
+          "
         >
-          <i class="fa fa-whatsapp my-float"></i>
-        </a>
+          Nuestra Historia
+        </h1>
+        <h1
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            margin-top: 8em;
+          "
+        >
+          Somos Consumo Consciente
+        </h1>
+      </div>
+
+      <div style="background-color: white">
+        <img
+          src="../img/logo.jpeg"
+          style="text-align: center; margin-left: 28rem"
+        />
+        <h2 style="color: #1a4301">Una comunidad de familias!</h2>
+        <p style="color: #1a4301">
+          Tenemos como objetivo desarrollar una red de comercio justo,
+          agricultura orgánica, productos locales y cero desperdicios. En un
+          espíritu de equidad y cooperación. En asociación con organizaciones
+          campesinas, grupos de productores y cooperativas indígenas, creamos
+          lazos de valor equitativos basados en el cumplimiento de exigentes
+          criterios sociales y ecológicos.
+        </p>
+      </div>
+
+      <a
+        href="https://wa.me/%2B593999453806?text=Hola!%20quiero%20contactarme%20con%20Juan%20Granel%20"
+        class="float"
+        target="_blank"
+      >
+        <i class="fa fa-whatsapp my-float"></i>
+      </a>
+
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="offcanvas-header">
+          <div id="offcanvasRightLabel"></div>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="shopping-cart">
+            <div class="title">Mis Compras:</div>
+            <div id="productos"></div>
+            <div>
+              <p>Valor Total a pagar:<span id="totalApagar"></span>usd</p>
+              <button>
+                <a href="../pages/carritodecompras.html">Finalizar Compra</a>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer>
@@ -88,8 +130,9 @@
     </footer>
   </body>
   <script
-      src="https://kit.fontawesome.com/85f636b7ea.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="javascript/historia.js"></script>
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../javascript/librerias.js"></script>
 </html>
