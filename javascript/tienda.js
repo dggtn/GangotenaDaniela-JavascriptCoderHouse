@@ -101,12 +101,12 @@ function seleccionarProducto(id){
     
     const producto = productos.find((producto)=>producto.id === Number(id))
     if(producto) {
-        alert ("El producto ya ha sido agregado al carrito")
+        Swal.fire("El producto ya ha sido agregado al carrito");
     } else {
         let productoAgregado = tiendaEnLinea.obtenerProductoPorId(id);
         let item = {...productoAgregado, cantidad: 1};
         productos.push(item);
-        alert(item.nombre +" se ha guardado con exito en el carrito de compras");
+        swal.fire(item.nombre +" se ha guardado con exito en el carrito de compras");
         localStorage.setItem("productos",JSON.stringify(productos));
     }
 }
