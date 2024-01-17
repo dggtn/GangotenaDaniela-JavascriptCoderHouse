@@ -75,16 +75,15 @@ function elegirCantidad (id){
   calcularTotalDeCompra();
 }
 
-function calcularTotalDeCompra(){
-  let productosString =  localStorage.getItem("productos");
-  let productos = JSON.parse(productosString);
-  let precioTotal = 0;
-  for(let i = 0; i< productos.length; i++){
-    let producto = productos[i];
-    precioTotal += producto.precio * producto.cantidad;
-}
-let totalApagar = document.getElementById("totalApagar") 
-totalApagar.innerHTML = precioTotal;
 
-}
+
+
 calcularTotalDeCompra();
+
+
+function alertaCompraFinalizada(){
+  Swal.fire("Gracias por tu compra");
+}
+
+
+
