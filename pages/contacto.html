@@ -45,6 +45,81 @@
       /></a>
     </header>
     <main>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="ms-4 mt-3 mt-5 mb-5" style="color: #1a4301" ;>
+              Quieres trabajar con nosotros?
+            </h1>
+            <p class="text-dark fs-4 ms-4 bold">
+              Comentanos que producto tienes o produces!
+            </p>
+            <p class="text-dark fs-4 ms-4 bold mb-5">
+              Recuerda que para ser nuestro proovedor tus productos deben ser:
+            </p>
+            <ul>
+              <li>orgánicos</li>
+              <li>contar con metodos de comercio justo en tu comunidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 ms-4">
+        <div class="form-floating mb-3 text-dark">
+          <input
+            type="text"
+            class="form-control text-dark bold border-2 text-dark border-success rounded-pill"
+            id="nombre"
+            placeholder="Nombre"
+          />
+          <label for="floatingInput">Nombre</label>
+        </div>
+
+        <div class="form-floating mb-3 text-dark">
+          <input
+            type="text"
+            class="form-control text-dark bold border-2 border-success rounded-pill"
+            id="apellido"
+            placeholder="Apellido"
+          />
+
+          <label for="floatingInput">Apellido</label>
+        </div>
+        <div>
+          <div class="form-floating mb-3 text-dark">
+            <input
+              type="email"
+              class="form-control text-dark bold border-2 border-success rounded-pill"
+              id="email"
+              placeholder="Correo electrónico"
+              name="Correo electrónico"
+            />
+
+            <label for="floatingInput">Dirección de correo electrónico</label>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control bold border-2 border-success rounded-3 fw-bold text-dark"
+            style="height: 250px"
+            ;
+            id="comentarios"
+            placeholder="Comentarios"
+          ></textarea>
+          <label for="floatingInput"
+            >Escribe toda la info sobre tu producto</label
+          >
+        </div>
+        <button
+          type="button"
+          class="col-md-6 text-center btn text-dark bold border-2 border-success rounded-pill rounded-3 fs-3 fw-bold ms-2 mt-3 mb-5"
+          style="background-color: white"
+          onclick="enviarOpinion()"
+        >
+          ENVIAR
+        </button>
+      </div>
+
       <div
         class="container-fluid text-start px-0 mt-3 fondo-inicio-desktop"
         style="background-color: #1a4301; width: 100%"
@@ -58,19 +133,18 @@
               </h1>
               <div class="col-md-12 fs-4">
                 <p class="text-white bold ps-3 mb-5">
-                  ¡CONSUMO CONSCIENTE es nuestro boletín mensual de
-                  actualización, repleto de consejos increíbles, actualizaciones
-                  sobre nuestra misión y sorteos para ganar!
+                  ¡CONSUMO CONSCIENTE es nuestro boletín mensual de actualización, repleto
+                  de consejos increíbles,
+                  actualizaciones sobre nuestra misión y sorteos para ganar!
                 </p>
               </div>
               <div class="col-md-6 fs-4">
                 <p class="text-white bold ps-3">
-                  ¡Unite a la comunidad y recibí “CONSUMO CONSCIENTE”
-                  directamente en tu bandeja de entrada!
+                  ¡Unite a la comunidad y recibí “CONSUMO CONSCIENTE” directamente en tu
+                  bandeja de entrada!
                 </p>
                 <p class="text-white bold ps-3">
-                  ¡No volverás a perderte ningún truco sobre el CONSUMO
-                  CONSCIENTE ni la oportunidad de ganar!
+                  ¡No volverás a perderte ningún truco sobre el CONSUMO CONSCIENTE ni la oportunidad de ganar!
                 </p>
               </div>
               <div class="col-md-4 ms-4">
@@ -116,6 +190,7 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script src="../javascript/contacto.js"></script>
     <script src="../javascript/newsletter.js"></script>
   </body>
 </html>
