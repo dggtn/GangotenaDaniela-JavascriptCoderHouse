@@ -9,9 +9,12 @@
       name="description"
       content="Tienda de alimentos orgánicos de comercio justo en Ecuador"
     />
-    <link href="
+    <link
+      href="
     https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.min.css
-    " rel="stylesheet">
+    "
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -59,9 +62,6 @@
           <a href="../pages/tienda.html">TIENDA</a>
           <a href="../pages/blog.html">BLOG</a>
           <a href="../pages/contacto.html">TRABAJA CON NOSOTROS</a>
-          <a href="../pages/usuario.html"
-            ><img class="imagenesNavbar" src="../img/uruario.png" alt="usuario"
-          /></a>
           <a href="../pages/favoritos.html">FAVORITOS</a>
           <a
             class="btn btn-primary"
@@ -80,39 +80,62 @@
     </header>
     <main>
       <div>
-        <div id="myModal"class="modal" tabindex="-1">
+        <div id="myModal" class="modal" tabindex="-1">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Ingresa tu mail y contrasena para finalizar tus compras:(o registrate)</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title">
+                  Ingresa tu mail y contrasena para finalizar tus compras:(o
+                  registrate)
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
               <div class="modal-body">
                 <div class="input-group">
                   <div>
-                  <span class="input">Email :</span>
+                    <span class="input">Email :</span>
+                    <div>
+                      <input
+                        type="text"
+                        aria-label="First name"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
                   <div>
-                  <input type="text" aria-label="First name" class="form-control">
-                </div>
-              </div>
-                <div>
-                  <span class="input">contrasena :</span>
-                  <div>
-                  <input type="text" aria-label="Last name" class="form-control">
-                </div>
-              </div>
+                    <span class="input">contrasena :</span>
+                    <div>
+                      <input
+                        type="text"
+                        aria-label="Last name"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="modal-footer">
-                
-                <button type="button" class="btn btn-primary">Registrate</button>
+                <button type="button" class="btn btn-primary">
+                  Registrate
+                </button>
                 <button type="button" class="btn btn-primary">Ingresar</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
               </div>
             </div>
           </div>
         </div>
-     </div>
+      </div>
       <div class="shopping-cart">
         <div class="title">Mis Compras:</div>
         <div id="productos"></div>
