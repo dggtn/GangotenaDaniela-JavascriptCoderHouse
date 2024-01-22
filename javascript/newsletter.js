@@ -23,15 +23,15 @@ function newsletter(){
     }
     
     if (formularioValido == true){
-        alert ("Gracias " + nombreYApellido + " por suscribirte a nuestro newsletter") 
+        Swal.fire("Gracias " + nombreYApellido + " por suscribirte a nuestro newsletter") 
         document.getElementById("nombreYApellido").value=""
         document.getElementById("correoelectronico").value=""
         
     } else {
-        alert ("Por favor complete todos los campos")
+        Swal.fire ("Por favor complete todos los campos")
         console.log("Valido:", emailValido)
         if (emailValido == false) {
-            alert ("Formato de email incorrecto")
+            Swal.fire ("Formato de email incorrecto")
         }
     }
 }

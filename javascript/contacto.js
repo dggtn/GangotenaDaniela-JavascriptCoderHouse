@@ -30,17 +30,17 @@ function enviarOpinion(){
         formularioValido = false;
     }
     if (formularioValido == true){
-        alert ("Gracias " + nombre + " tomaremos en cuenta tu opinión ") 
+        Swal.fire("Gracias " + nombre + " tomaremos en cuenta tu opinión ") 
         document.getElementById("nombre").value = ""
         document.getElementById("apellido").value=""
         document.getElementById("comentarios").value=""
         document.getElementById("email").value=""
         
     } else {
-        alert ("Por favor complete todos los campos")
+        Swal.fire ("Por favor complete todos los campos")
         console.log("Valido:", emailValido)
         if (emailValido == false) {
-            alert ("Formato de email incorrecto")
+            Swal.fire ("Formato de email incorrecto")
         }
     }
 }
