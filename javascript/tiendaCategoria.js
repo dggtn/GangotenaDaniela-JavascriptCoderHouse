@@ -39,8 +39,8 @@ let avellanas = new Producto(2,"Avellanas","Frutas Secas","Al granel,naturales",
 let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","Frutas Secas","100% almendras","../img/mantequillaAlmendras.jpg",12);
 let mantequillaDePistachos = new Producto(4,"Mantequilla de Pistachos","Frutas Secas","Al granel,naturales","../img/mantequillaPistacho.jpg",12 );
 let granola = new Producto(5,"Granola","Al granel,natural","Frutas Secas","../img/granola.jpg",12 );
-let canela = new Producto(6,"Canela","Especias","Al granel,natural","../img/granola.jpg",12 );
-let teVerde = new Producto(7,"Te Verde","Hierbas para té","Al granel,natural","../img/granola.jpg",12 );
+let canela = new Producto(6,"Canela","Especias","Al granel,natural","../img/canela.jpg",12 );
+let teVerde = new Producto(7,"Te Verde","Hierbas para té","Al granel,natural","../img/canela.jpg",12 );
 
 
 
