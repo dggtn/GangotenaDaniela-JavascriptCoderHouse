@@ -39,6 +39,6 @@ function newsletter(){
 function validarEmail(correoelectronico){
 	
 	// Define our regular expression.
-	var expresionRegular =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+	let expresionRegular =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     return expresionRegular.test(correoelectronico);
 }

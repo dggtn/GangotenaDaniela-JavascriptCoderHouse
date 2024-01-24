@@ -1,10 +1,12 @@
 class Producto {
-    constructor(id, nombre, descripcion, imagen, precio) {
+    constructor(id, nombre, categoria,descripcion, imagen, precio) {
         this.id = id;
         this.nombre = nombre;
+        this.categoria = categoria;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.precio = precio;
+        
     }
 }
 
@@ -24,13 +26,22 @@ class TiendaEnLinea {
     obtenerProductoPorId(id){
         return this.productos.find((producto) => producto.id == id )
     }
+    mostrarTodos(){
+        return this.productos;
+    }
+    mostrarPorCategoria(categoria){
+        return this.productos.filter((producto) => producto.categoria == categoria )
+    }
 }
 
-let frutillas  = new Producto(1,"Frutillas","Al granel,Organica","../img/frutillas.png",8 );
-let avellanas = new Producto(2,"Avellanas","Al granel,naturales","../img/avellanas.png",54);
-let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","100% almendras","../img/mantequillaAlmendras.jpg",12);
-let mantequillaDePistachos = new Producto(4,"Mantequilla de Pistachos","Al granel,naturales","../img/mantequillaPistacho.jpg",12 );
-let granola = new Producto(5,"Granola","Al granel,natural","../img/granola.jpg",12 );
+let frutillas  = new Producto(1,"Frutillas","Frutas Deshidratadas","Al granel,Organica","../img/frutillas.png",8, );
+let avellanas = new Producto(2,"Avellanas","Frutas Secas","Al granel,naturales","../img/avellanas.png",54);
+let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","Frutas Secas","100% almendras","../img/mantequillaAlmendras.jpg",12);
+let mantequillaDePistachos = new Producto(4,"Mantequilla de Pistachos","Frutas Secas","Al granel,naturales","../img/mantequillaPistacho.jpg",12 );
+let granola = new Producto(5,"Granola","Al granel,natural","Frutas Secas","../img/granola.jpg",12 );
+let canela = new Producto(6,"Canela","Especias","Al granel,natural","../img/granola.jpg",12 );
+let teVerde = new Producto(7,"Te Verde","Hierbas para té","Al granel,natural","../img/granola.jpg",12 );
+
 
 
 let tiendaEnLinea = new TiendaEnLinea();
@@ -39,6 +50,8 @@ tiendaEnLinea.agregarProducto(avellanas);
 tiendaEnLinea.agregarProducto(mantequillaDeAlmendras);
 tiendaEnLinea.agregarProducto(mantequillaDePistachos);
 tiendaEnLinea.agregarProducto(granola);
+tiendaEnLinea.agregarProducto(canela);
+tiendaEnLinea.agregarProducto(teVerde);
 
 mostrarProductos();
 
@@ -53,7 +66,7 @@ function mostrarProductos(){
         let producto = productos[i];
         
         let item = document.createElement('div')
-        item.classList.add("item");
+        item.classList.add("item","show");
         item.setAttribute('id',"producto_" + producto.id)
         item.innerHTML = `
         <div class="buttons">
@@ -71,6 +84,7 @@ function mostrarProductos(){
       
       <div class="description">
         <span>${producto.nombre}</span>
+        <span>${producto.categoria}</span>
         <span>${producto.descripcion}</span>
       </div>
 
@@ -160,8 +174,60 @@ function cargarPantallaTienda(){
 
 cargarPantallaTienda();
 
+function filtrarPorCategoria(categoria){
+    console.log(categoria);
+    const productos = tiendaEnLinea.mostrarPorCategoria(categoria);
+    console.log(productos);
+    let items, i;
+    items = document.getElementsByClassName("item");
+    for (i= 0; i < items.length; i++) {
+     agregarClase(items[i], "ocultar");
+     console.log(items[i].id)
+    const productoFiltrado = productos.find((producto)=>"producto_" + producto.id == items[i].id);
+    if(productoFiltrado){
+        eliminarClase(items[i],"ocultar")
 
 
+    }
+    
+    }
+    
+  }
+
+  function mostrarTodos(){
+    let items, i;
+    items = document.getElementsByClassName("item");
+    for (i= 0; i < items.length; i++) {
+    eliminarClase(items[i], "ocultar");
+    }
+    
+    }
+    
+  
+
+
+
+function agregarClase(element, name) {
+  let i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function eliminarClase(element, name) {
+  let i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+
+}
 
 
 
