@@ -1,7 +1,7 @@
 .filterDiv {
     float: left;
-    background-color: #2196F3;
-    color: #ffffff;
+    background-color: #4dba48;
+    color: #1ae235;
     width: 100px;
     line-height: 100px;
     text-align: center;
@@ -23,16 +23,16 @@
     border: none;
     outline: none;
     padding: 12px 16px;
-    background-color: #ffffff;
+    background-color: #469f3e;
     cursor: pointer;
   }
   
   .btn:hover {
-    background-color: #299852;
+    background-color: #3dcc44;
   }
   
   .btn.active {
-    background-color: #055a10;
+    background-color: #55d42a;
     color: white;
   }
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
@@ -239,19 +239,8 @@ body {
   align-items: center;
   justify-content:center;
 }
-
-
-
-
-
-
-
 footer {
   width: 100%;
-  margin-top: auto;
-  text-align: right;
-  border-top: 1px solid rgba(18, 44, 6, 0.553);;
-  background-color: rgba(5, 11, 2, 0.553);;
 }
 
 footer p {

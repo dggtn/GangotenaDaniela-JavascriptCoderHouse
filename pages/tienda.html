@@ -9,6 +9,7 @@
       name="description"
       content="Tienda de alimentos orgánicos de comercio justo en Ecuador"
     />
+    <link rel="stylesheet" href="../estilos/tiendaCategoria.css" />
     <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.min.css
 " rel="stylesheet">
@@ -18,7 +19,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.min.css
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../estilos/tiendaCategoria.css" />
+   
   </head>
   <body class="inicio">
     <header class="header">
@@ -77,13 +78,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.min.css
       </nav>
     </header>
     <main>
-      <div class="shopping-cart">
+      <div class="card col-sm-11 mt-5 mx-5">
         <div>
-        <button class="btn active" onclick="mostrarTodos('todos')">Todos los productos</button>
-        <button class="btn active" onclick="filtrarPorCategoria('Frutas Secas')";>Frutas Secas</button>
-        <button class="btn active" onclick="filtrarPorCategoria('Frutas Deshidratadas')";>Frutas deshidratadas</button>
-        <button class="btn active" onclick="filtrarPorCategoria('Especias')";>Especias</button>
-        <button class="btn active" onclick="filtrarPorCategoria('Hierbas para té')";>Hierbas para té</button>
+        <button class="btn btn-success active" onclick="mostrarTodos('todos')">Todos los productos</button>
+        <button class="btn btn-success active" onclick="filtrarPorCategoria('Frutas Secas')";>Frutas Secas</button>
+        <button class="btn btn-success active" onclick="filtrarPorCategoria('Frutas Deshidratadas')";>Frutas deshidratadas</button>
+        <button class="btn btn-success active" onclick="filtrarPorCategoria('Especias')";>Especias</button>
+        <button class="btn btn-success active" onclick="filtrarPorCategoria('Hierbas para té')";>Hierbas para té</button>
         </div>
         <div class="title">Tienda Online:</div>
         <div class="item show"></div>
@@ -127,9 +128,26 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.min.css
         </div>
       </div>
     </main>
-    <footer>
-      <p>© 2023 Juan Granel. Todos los derechos reservados.</p>
-    </footer>
+       <footer class="container-fluid mt-5 mb-1">
+      <div class="row">
+        <p class="col texto text-center fw-bold space-between mt-5 mb-0">
+          Somos Juan Granel Consumo Consciente
+        </p>
+        <p class="texto text-center fw-bold space-between mb-0">
+          Quito-Ecuador
+        </p>
+        <p class="texto text-center fw-bold space-between mb-0">
+          Comercio Justo
+        </p>
+      </div>
+          <div class="col-md-3 col-sm-9">
+            <p class="derechosreservados">
+              2024 Todos los derechos reservados.
+            </p>
+          </div>
+        </div>
+      </div>
+      </footer>
   </body>
   <script src="../javascript/tiendaCategoria.js"></script>
   <script
