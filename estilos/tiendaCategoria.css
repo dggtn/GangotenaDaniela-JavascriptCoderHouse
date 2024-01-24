@@ -52,6 +52,7 @@ body {
 .shopping-cart {
   width: 500px;
   margin: 80px auto;
+  margin-bottom: 3em;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
   border-radius: 6px;
