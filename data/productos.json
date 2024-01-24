@@ -1,0 +1,7 @@
+[{"id":1,"nombre":"Frutillas","categoria":"Frutas Deshidratadas","descripcion":"Al granel,Organica","imagen":"../img/frutillas.png","precio":8},
+{"id":2,"nombre":"Avellanas","categoria":"Frutas Secas","descripcion":"Al granel,naturales","imagen":"../img/avellanas.png","precio":54},
+{"id":3,"nombre":"Mantequilla de Almendras","categoria":"Frutas Secas","descripcion":"100% almendras","imagen":"../img/mantequillaAlmendras.jpg","precio":12},
+{"id":4,"nombre":"Mantequilla de Pistachos","categoria":"Frutas Secas","descripcion":"Al granel,naturales","imagen":"../img/mantequillaPistacho.jpg","precio":12 },
+{"id":5,"nombre":"Granola","descripcion":"Al granel,natural","categoria":"Frutas Secas","imagen":"../img/granola.jpg","precio":12 },
+{"id":6,"nombre":"Canela","categoria":"Especias","descripcion":"Al granel,natural","imagen":"../img/canela.jpg","precio":12 },
+{"id":7,"nombre":"Te Verde","categoria":"Hierbas para té","descripcion":"Al granel,natural","imagen":"../img/canela.jpg","precio":12 }]

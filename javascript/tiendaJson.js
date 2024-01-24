@@ -11,8 +11,8 @@ class Producto {
 
 class TiendaEnLinea {
 
-    constructor(){
-        this.productos = [];
+    constructor(productos){
+        this.productos = productos;
     }
     agregarProducto(producto){
         this.productos.push(producto);
@@ -33,31 +33,20 @@ class TiendaEnLinea {
     }
 }
 
-let frutillas  = new Producto(1,"Frutillas","Frutas Deshidratadas","Al granel,Organica","../img/frutillas.png",8, );
-let avellanas = new Producto(2,"Avellanas","Frutas Secas","Al granel,naturales","../img/avellanas.png",54);
-let mantequillaDeAlmendras = new Producto(3,"Mantequilla de Almendras","Frutas Secas","100% almendras","../img/mantequillaAlmendras.jpg",12);
-let mantequillaDePistachos = new Producto(4,"Mantequilla de Pistachos","Frutas Secas","Al granel,naturales","../img/mantequillaPistacho.jpg",12 );
-let granola = new Producto(5,"Granola","Al granel,natural","Frutas Secas","../img/granola.jpg",12 );
-let canela = new Producto(6,"Canela","Especias","Al granel,natural","../img/canela.jpg",12 );
-let teVerde = new Producto(7,"Te Verde","Hierbas para té","Al granel,natural","../img/canela.jpg",12 );
+// Variables globales
+let tiendaEnLinea;
+const cargarProductos = async () => {
+    const respuesta = await fetch('../data/productos.json')
+    const productos = await respuesta.json()
+    tiendaEnLinea = new TiendaEnLinea(productos)
+    mostrarProductos();
+    cargarFavoritos();
+}
 
-
-
-let tiendaEnLinea = new TiendaEnLinea();
-tiendaEnLinea.agregarProducto(frutillas);
-tiendaEnLinea.agregarProducto(avellanas);
-tiendaEnLinea.agregarProducto(mantequillaDeAlmendras);
-tiendaEnLinea.agregarProducto(mantequillaDePistachos);
-tiendaEnLinea.agregarProducto(granola);
-tiendaEnLinea.agregarProducto(canela);
-tiendaEnLinea.agregarProducto(teVerde);
-
-mostrarProductos();
+cargarProductos()
 
 function mostrarProductos(){
-    
-    let productos = tiendaEnLinea.obtenerProductos();
-        
+    let productos = tiendaEnLinea.mostrarTodos();
     const contenedor = document.getElementById("productosDeLaTienda");
 
     for(let i = 0; i< productos.length; i++){
@@ -167,11 +156,8 @@ function cargarFavoritos(){
         let favorito = favoritos[i];
         let imagenCorazon = document.getElementById("corazon_" + favorito.id);
         imagenCorazon.src = "../img/heart-solid.svg"; 
-        console.log(imagenCorazon);
     }
 }
-
-cargarFavoritos();
 
 function filtrarPorCategoria(categoria){
     console.log(categoria);
