@@ -17,6 +17,8 @@ function listaDeCompras(){
   let productosString  =  localStorage.getItem("productos");       
   let productos = JSON.parse(productosString);
   
+  if(!productos) return;
+
   const contenedor = document.getElementById("productos");
   for(let i = 0; i< productos.length; i++){
 
@@ -61,9 +63,6 @@ function listaDeCompras(){
 
 }
 
-listaDeCompras();
-
-
 function elegirCantidad (id){
 
 let cantidad = document.getElementById("cantidad_" + id).value;
@@ -78,6 +77,8 @@ calcularTotalDeCompra();
 function calcularTotalDeCompra(){
 let productosString =  localStorage.getItem("productos");
 let productos = JSON.parse(productosString);
+if (!productos) return;
+
 let precioTotal = 0;
 for(let i = 0; i< productos.length; i++){
   let producto = productos[i];
@@ -87,4 +88,7 @@ let totalApagar = document.getElementById("totalApagar")
 totalApagar.innerHTML = precioTotal;
 
 }
+
+// Funciones de inicializacion
 calcularTotalDeCompra();
+listaDeCompras();
