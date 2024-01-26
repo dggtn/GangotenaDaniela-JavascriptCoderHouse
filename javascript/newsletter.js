@@ -54,9 +54,6 @@ function validarEmail(correoelectronico){
     return expresionRegular.test(correoelectronico);
 }
 
-(function registrarseAlNewsletter() {
-    // https://dashboard.emailjs.com/admin/account
-    
-})();
+
 
   

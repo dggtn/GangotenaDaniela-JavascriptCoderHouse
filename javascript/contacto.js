@@ -3,19 +3,17 @@ let apellido;
 let email;
 let comentarios;
 //validar formularios
-function enviarOpinion(){
+function enviarOpinion(e){
+    e.preventDefault();
     let formularioValido = true;
     let emailValido = true
     let nombre= document.getElementById("nombre").value;
     if (nombre == ""){
         formularioValido = false;
     }
-    let apellido= document.getElementById("apellido").value;
-    if (apellido == ""){
-        formularioValido = false;
-    }
-
+    
     let email= document.getElementById("email").value;
+    console.log(email)
     if (email == ""){
         formularioValido = false;
     } else {
@@ -30,11 +28,20 @@ function enviarOpinion(){
         formularioValido = false;
     }
     if (formularioValido == true){
-        Swal.fire("Gracias " + nombre + " tomaremos en cuenta tu opinión ") 
+        let formulario =  document.getElementById('contact-form')
+        emailjs.init('xfBN8QaHVdIGL1WLz');
+        formulario.contact_number.value = Math.random() * 100000 | 0;
+        emailjs.sendForm('email_service', 'contact_form', formulario)
+            .then(function() {
         document.getElementById("nombre").value = ""
-        document.getElementById("apellido").value=""
         document.getElementById("comentarios").value=""
         document.getElementById("email").value=""
+                console.log('SUCCESS!');
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
+        Swal.fire("Gracias " + nombre + " tomaremos en cuenta tu opinión ") 
+        
         
     } else {
         Swal.fire ("Por favor complete todos los campos")
@@ -51,20 +58,3 @@ function validarEmail(email){
 	let expresionRegular =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     return expresionRegular.test(email);
 }
-
-
-function postData(email) {
-    fetch('../emailValidacion.json', {
-      method: 'POST', 
-      body: JSON.stringify(email), 
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => console.log(data));
-  }
-  
-  const data = {username: 'example'};
-  
-  postData(data);

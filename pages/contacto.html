@@ -5,28 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init('xfBN8QaHVdIGL1WLz');
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('email_service', 'contact_form', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.jpeg" />
     <meta
       name="description"
@@ -90,38 +68,16 @@
       </div>
       <title >Contact Form</title>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-      <script type="text/javascript">
-          (function() {
-              // https://dashboard.emailjs.com/admin/account
-              emailjs.init('xfBN8QaHVdIGL1WLz');
-          })();
-      </script>
-      <script type="text/javascript">
-          window.onload = function() {
-              document.getElementById('contact-form').addEventListener('submit', function(event) {
-                  event.preventDefault();
-                  // generate a five digit number for the contact_number variable
-                  this.contact_number.value = Math.random() * 100000 | 0;
-                  // these IDs from the previous steps
-                  emailjs.sendForm('email_service', 'contact_form', this)
-                      .then(function() {
-                          console.log('SUCCESS!');
-                      }, function(error) {
-                          console.log('FAILED...', error);
-                      });
-              });
-          }
-      </script>
   <body>
       <form id="contact-form">
-          <input id="nombre"style="height: 4em;width:50em" class="form-control text-dark bold border-2 border-success rounded-pill" type="hidden" name="contact_number">
+          <input style="height: 4em;width:50em" class="form-control text-dark bold border-2 border-success rounded-pill" type="hidden" name="contact_number">
           <label class="mx-5">Nombre:</label>
-          <input id="email"style="height:  4em;width:50em" class="form-control text-dark bold border-2 border-success rounded-pill" type="text" name="user_name">
+          <input id="nombre"style="height:  4em;width:50em" class="form-control text-dark bold border-2 border-success rounded-pill" type="text" name="user_name">
           <label class="mx-5">Email:</label>
-          <input id="comentarios"style="height:  4em;width:50em" class="form-control text-dark bold border-2 border-success rounded-pill" type="email" name="user_email">
+          <input id="email"style="height:  4em;width:50em" class="form-control text-dark bold border-2 border-success rounded-pill" type="email" name="user_email">
           <label class="mx-5">Cuentanos sobre tu producto:</label>
-          <textarea style="height: 12em;width:50em;" name="message"class="form-control text-dark bold border-2 border-success rounded"></textarea>
-          <input  onclick="enviarOpinion()" class="text-dark bold border-2 border-success rounded-pill mt-3"type="submit" value="Send">
+          <textarea id="comentarios"style="height: 12em;width:50em;" name="message"class="form-control text-dark bold border-2 border-success rounded"></textarea>
+          <input  onclick="enviarOpinion(event)" class="text-dark bold border-2 border-success rounded-pill mt-3"type="submit" value="Send">
       </form>
   </body>
       <div
