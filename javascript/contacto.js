@@ -51,3 +51,20 @@ function validarEmail(email){
 	let expresionRegular =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     return expresionRegular.test(email);
 }
+
+
+function postData(email) {
+    fetch('../emailValidacion.json', {
+      method: 'POST', 
+      body: JSON.stringify(email), 
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+  }
+  
+  const data = {username: 'example'};
+  
+  postData(data);
