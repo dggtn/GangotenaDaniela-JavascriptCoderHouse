@@ -91,4 +91,4 @@ totalApagar.innerHTML = precioTotal;
 
 // Funciones de inicializacion
 calcularTotalDeCompra();
-listaDeCompras();
+
