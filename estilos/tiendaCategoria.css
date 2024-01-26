@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 .filterDiv {
     float: left;
     background-color: #4dba48;
@@ -35,12 +36,8 @@
     background-color: #55d42a;
     color: white;
   }
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+  
 
-* {
-  box-sizing: border-box;
-}
- 
 html,
 body {
   width: 100%;
@@ -201,12 +198,7 @@ body {
   width: 100%;
 }
 
-.inicio{
-  background-color:#addb8c;
-  width: 100%;
-  padding: 0;
 
-}
 .float{
 	position:fixed;
 	width:60px;
@@ -260,7 +252,7 @@ footer p {
   justify-content: space-between;
   padding-right: 1rem;
   font-weight: bold;
-  border-bottom: 1px solid #eff3f7;
+
 }
 
 .header-mobile {
@@ -300,18 +292,10 @@ header ul{
   width: 100%;
   position: fixed;
   overflow: hidden;
-  background-color: #fff;
-  border-bottom: 1px solid #eff3f7;
+
 }
 
-.nav{
-  max-height: 0;
-  transition: max-height .5s ease-out;
-}
 
-.side-menu:checked ~ nav{
-  max-height: 50%;
-}
 
 
 h1 {

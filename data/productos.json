@@ -4,4 +4,7 @@
 {"id":4,"nombre":"Mantequilla de Pistachos","categoria":"Frutas Secas","descripcion":"Al granel,naturales","imagen":"../img/mantequillaPistacho.jpg","precio":12 },
 {"id":5,"nombre":"Granola","descripcion":"Al granel,natural","categoria":"Frutas Secas","imagen":"../img/granola.jpg","precio":12 },
 {"id":6,"nombre":"Canela","categoria":"Especias","descripcion":"Al granel,natural","imagen":"../img/canela.jpg","precio":12 },
-{"id":7,"nombre":"Te Verde","categoria":"Hierbas para té","descripcion":"Al granel,natural","imagen":"../img/canela.jpg","precio":12 }]
+{"id":7,"nombre":"Te Verde","categoria":"Hierbas para té","descripcion":"Al granel,natural","imagen":"../img/teVerde.jpg","precio":12 },
+{"id":8,"nombre":"pimiento rojo en polvo","categoria":"Especias","descripcion":"Al granel,natural","imagen":"../img/pimentonRojo.jpg","precio":2.5 },
+{"id":9,"nombre":"Te Rooibos","categoria":"Hierbas para té","descripcion":"Al granel,natural","imagen":"../img/rooibos.jpg","precio":35 },
+{"id":10,"nombre":"Te Matcha","categoria":"Hierbas para té","descripcion":"Al granel,natural","imagen":"../img/matcha.jpg","precio":45 }]
