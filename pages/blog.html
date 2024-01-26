@@ -85,9 +85,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="row">
-              <h6 class="text-white bold ps-3 ms-4 mt-3 mt-5 mb-5">
+              <p class="text-white bold ps-3 ms-4 mt-3 mt-5 mb-5 fs-1">
                 Suscribite
-              </h6>
+              </p>
               <div class="col-md-12 fs-4">
                 <p class="text-white bold ps-3 mb-5">
                   ¡CONSUMO CONSCIENTE es nuestro boletín mensual de
@@ -108,28 +108,6 @@
               <div class="col-md-4 ms-4">
                 <title>Contact Form</title>
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-                <script type="text/javascript">
-                    (function() {
-                        // https://dashboard.emailjs.com/admin/account
-                        emailjs.init('xfBN8QaHVdIGL1WLz');
-                    })();
-                </script>
-                <script type="text/javascript">
-                    window.onload = function() {
-                        document.getElementById('contact-form').addEventListener('submit', function(event) {
-                            event.preventDefault();
-                            // generate a five digit number for the contact_number variable
-                            this.contact_number.value = Math.random() * 100000 | 0;
-                            // these IDs from the previous steps
-                            emailjs.sendForm('email_service', 'contact_form', this)
-                                .then(function() {
-                                    console.log('SUCCESS!');
-                                }, function(error) {
-                                    console.log('FAILED...', error);
-                                });
-                        });
-                    }
-                </script>
             </head>
             <body>
                 <form id="contact-form">
@@ -153,7 +131,7 @@
                   </div>
                   <div>
                     <input class="form-control border border-success rounded-pill fs-3 fw-bold ms-1 mt-3 mb-5 btn-white btn-lg"
-                    onclick="newsletter ()" type="submit" value="Send">
+                    onclick="newsletter(event)" type="submit" value="Send">
                   </div>
                 </form>
             </body>
