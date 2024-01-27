@@ -100,71 +100,16 @@
         </div>
       </div>
     </nav>
-    <main>
+    <main class="text-bg-success p-3">
     </header>
-      <div>
-        <div id="myModal" class="modal" tabindex="-1">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">
-                  Ingresa tu mail y contrasena para finalizar tus compras:(o
-                  registrate)
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <div class="input-group">
-                  <div>
-                    <span class="input">Email :</span>
-                    <div>
-                      <input
-                        type="text"
-                        aria-label="First name"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <span class="input">contrasena :</span>
-                    <div>
-                      <input
-                        type="text"
-                        aria-label="Last name"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">
-                  Registrate
-                </button>
-                <button type="button" class="btn btn-primary">Ingresar</button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Cerrar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="card col-sm-11 mt-5 mx-5 mb-5">
       <div class="shopping-cart">
         <div class="title">Mis Compras:</div>
         <div id="productos"></div>
+      </div>
         <div>
           <p>Valor Total a pagar:<span id="totalApagar"></span>usd</p>
-          <button onclick="alertaCompraFinalizada();">Pagar</button>
+          <button class="btn btn-success fs-4" onclick="alertaCompraFinalizada();">Pagar</button>
         </div>
       </div>
     </main>

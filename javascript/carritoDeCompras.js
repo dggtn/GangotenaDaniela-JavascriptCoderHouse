@@ -32,6 +32,7 @@ function listaDeCompras(){
         
           <div class="image">
             <img
+            class="img-fluid rounded "
               style="height: 6em"
               src="${producto.imagen}"
               alt="${producto.nombre}"
