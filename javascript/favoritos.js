@@ -28,26 +28,31 @@ function listaDeFavoritos(){
             <span class="like-btn"></span>
           </div>
         
-          <div class="image">
-            <img
-              style="height: 6em"
+          <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 pt-5">
+            <img class="img-fluid rounded mx-auto d-block"
+            style="height: 8em;";
               src="${favorito.imagen}"
               alt="${favorito.nombre}"
             />
           </div>
         
-          <div class="description">
+          <div class="fs-4 "style="margin-left: 35%;
+          margin-right:30%">
             <span>${favorito.nombre}</span>
             <span>${favorito.descripcion}</span>
           </div>
         
-          <div class="total-price"><p>${favorito.precio}el kilo</p></div>
-          <img
+          <div style="margin-left: 45%;
+          margin-right:30%"class="total-price fs-4"><p>${favorito.precio}el kilo</p></div></div>
+          <div class="col-md-6 pt-5">
+          <img class="corazon"
+          style="height:4em;margin-left:35em"
             id="corazon_${favorito.id}"
-            style="padding-left: 2em;height:3em;"
             src="../img/trash-can-solid.svg"
             onclick="borrarFavorito('${favorito.id}')"
-          />    
+          /> 
         `
         contenedor.appendChild(item);
     }

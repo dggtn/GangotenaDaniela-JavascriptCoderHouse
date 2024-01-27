@@ -13,7 +13,7 @@
       name="description"
       content="Delivery sustentable de alimentos para ayudar a combatir el desperdicio de comida"
     />
-    <link rel="stylesheet" href="estilos/sidebar.css" />
+    <link rel="stylesheet" href="estilos/tiendaCategoria.css" />
     <link href="
     https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.min.css
     " rel="stylesheet">
@@ -24,12 +24,17 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-white bg-white py-3 py-lg-1">
-      <div class="container">
-        <a href="index.html" class="navbar-brand">
-          <img class="logo" src="../img/logo.jpeg" alt="logo empresa" alt="logo" />
-        </a>
+  <nav class="navbar navbar-expand-md navbar-white bg-white py-3 py-lg-1">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img
+          class="logo"
+          style="height:8em;width:16em"
+          src="../img/logo.jpeg"
+          alt="logo empresa"
+          alt="logo"
+        />
+      </a>
         <button
           class="navbar-toggler rounded-pill"
           type="button"
@@ -49,35 +54,35 @@
           <ul class="navbar-nav">
             <li class="nav-item px-4">
               <a
-                class="nav-link fw-bold fs-5 text-dark"
+              class="nav-link fw-bold  text-dark"
                 href="../pages/historia.html"
                 >HISTORIA</a
               >
             </li>
             <li class="nav-item px-4">
               <a
-                class="nav-link fw-bold fs-5 text-dark"
+              class="nav-link fw-bold  text-dark"
                 href="../pages/comerciojusto.html"
                 >COMERCIO JUSTO</a
               >
             </li>
             <li class="nav-item px-4">
               <a
-                class="nav-link fw-bold fs-5 text-dark"
+              class="nav-link fw-bold  text-dark"
                 href="../pages/tienda.html"
                 >TIENDA</a
               >
             </li>
             <li class="nav-item px-4">
               <a
-                class="nav-link fw-bold fs-5 text-dark"
+              class="nav-link fw-bold  text-dark"
                 href="../pages/contacto.html"
                 >TRABAJA CON NOSOTROS</a
               >
             </li>
             <li class="nav-item px-4">
               <a
-                class="nav-link fw-bold fs-5 text-dark"
+              class="nav-link fw-bold  text-dark"
                 href="../pages/favoritos.html"
                 >FAVORITOS</a
               >
@@ -100,12 +105,13 @@
         </div>
       </div>
     </nav>
-    <main>
     </header>
-    <body style="background-image:url('../img/canela.jpg')">
-    <main style="background-image:url('../img/canela.jpg')">
-      <div class="shopping-cart">
-        <div class="title">Mis Favoritos:</div>
+    <body >
+      <main class="text-bg-success p-3">
+      <div class="card " style="width:56em;margin-left: 20%;
+      margin-right:25%";>
+        <div class="title fs-4 "style="margin-left: 35%;
+        margin-right:30%";>Mis Favoritos:</div>
         <div class="item">
           <div id="favoritos"></div>
         </div>
