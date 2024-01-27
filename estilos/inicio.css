@@ -249,6 +249,17 @@ h2 {
       margin-top: 2rem;
       color: #245501;
 }
+.imagenesNavbar{
+  height: 3rem;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
 h3,h4,h5,h6{
   color:#1a4301;
 }

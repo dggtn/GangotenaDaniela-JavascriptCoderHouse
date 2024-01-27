@@ -181,6 +181,17 @@
   padding: 72px 20px;
   position: inherit;
 }
+.imagenesNavbar{
+  height: 3rem;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
 .discount-2 .discount-info {
   float: none;
   width: 100%;

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+main,section,body{
+  background-color: white;
+  background-repeat:no-repeat;
+  background-size:cover;
+  color:#1a4301;
+}
+
+.imagenesNavbar{
+  height: 3rem;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+}
+
+footer p {
+  font-size: 1rem;
+  padding-right: 2%;
+}
+
+
+
+header a {
+  text-decoration: none;
+  color: #1a4301;
+  font-size: 1rem;
+}
+
+header ul{
+  list-style: none;
+}
+
+.hamb {
+  display: none;
+}
+
+.side-menu {
+  display: none;
+}
+
+.menu a{
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nav{
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+
+}
+
+.nav{
+  max-height: 0;
+  
+}
+
+.side-menu:checked ~ nav{
+  max-height: 50%;
+}
+
+
+h1 {
+  margin-left: 8rem; 
+  margin-right: 8rem; 
+  text-align: center;
+  margin-top: 5rem;
+  color: #23430d;
+}
+
+h2 {
+      margin-left: 2rem; 
+      margin-right: 2rem; 
+      text-align: center;
+      margin-top: 2rem;
+      color: #245501;
+}
+h3,h4,h5,h6{
+  color:#1a4301;
+}
+.logo-link {
+  display: none;
+}
+
+.logo {
+  width: 50%;
+}
+
+p{
+  font-size: 20px;
+}
+
+.ocultar{
+    display: none;
+}

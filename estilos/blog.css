@@ -28,9 +28,20 @@
   border-top:  1px solid #E1E8EE;
   border-bottom:  1px solid #E1E8EE;
 }
+.imagenesNavbar{
+  height: 3rem;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+}
 footer {
   width: 100%;
-  position: absolute;
+  position: absolute;}
 
 
 
