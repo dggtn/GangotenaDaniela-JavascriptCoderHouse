@@ -54,7 +54,7 @@ function mostrarProductos(){
         let producto = productos[i];
         
         let item = document.createElement('div')
-        item.classList.add("item","show");
+        item.classList.add("item");
         item.setAttribute('id',"producto_" + producto.id)
         item.innerHTML = `
         <div class="buttons">
@@ -64,21 +64,21 @@ function mostrarProductos(){
       
       <div class="image">
         <img
-          style="height: 6em"
+          class="img-fluid rounded mx-auto d-block"
           src="${producto.imagen}"
           alt="${producto.nombre}"
         />
       </div>
       
-      <div class="description">
+      <div class="fs-4 ">
         <span>${producto.nombre}</span>
         <span>${producto.categoria}</span>
         <span>${producto.descripcion}</span>
       </div>
 
-      <div class="total-price"><p>${producto.precio} el kilo</p></div>
+      <div class="total-price fs-4"><p>${producto.precio} el kilo</p></div>
 <div>
-<button onclick="seleccionarProducto(${producto.id})">Comprar</button>
+<button class="btn btn-success fs-4"onclick="seleccionarProducto(${producto.id})">Comprar</button>
 </div>
 <div>
 <img
@@ -166,17 +166,14 @@ function filtrarPorCategoria(categoria){
     let items, i;
     items = document.getElementsByClassName("item");
     for (i= 0; i < items.length; i++) {
-     agregarClase(items[i], "ocultar");
-     console.log(items[i].id)
-    const productoFiltrado = productos.find((producto)=>"producto_" + producto.id == items[i].id);
-    if(productoFiltrado){
-        eliminarClase(items[i],"ocultar")
-
-
-    }
-    
-    }
-    
+        agregarClase(items[i], "ocultar");
+        console.log(items[i].id)
+        const productoFiltrado = productos.find((producto)=>"producto_" + producto.id == items[i].id);
+        console.log("Ocultar:",productoFiltrado)
+        if(productoFiltrado){
+            eliminarClase(items[i],"ocultar")
+        }    
+    }    
   }
 
   function mostrarTodos(){
