@@ -62,7 +62,7 @@ function mostrarProductos(){
         <span class="like-btn"></span>
       </div>
       
-      <div class="image">
+      <div >
         <img
           class="rounded float-start fotoTienda"
           src="${producto.imagen}"
