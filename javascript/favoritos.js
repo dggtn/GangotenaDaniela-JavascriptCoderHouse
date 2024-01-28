@@ -32,23 +32,20 @@ function listaDeFavoritos(){
           <div class="row">
             <div class="col-md-6 pt-5">
             <img class="img-fluid rounded mx-auto d-block"
-            style="height: 8em;";
               src="${favorito.imagen}"
               alt="${favorito.nombre}"
             />
           </div>
         
-          <div class="fs-4 "style="margin-left: 35%;
-          margin-right:30%">
+          <div>
             <span>${favorito.nombre}</span>
             <span>${favorito.descripcion}</span>
           </div>
         
-          <div style="margin-left: 45%;
-          margin-right:30%"class="total-price fs-4"><p>${favorito.precio}el kilo</p></div></div>
+          <div class="total-price fs-4"><p>${favorito.precio}el kilo</p></div></div>
           <div class="col-md-6 pt-5">
           <img class="corazon"
-          style="height:4em;margin-left:35em"
+         
             id="corazon_${favorito.id}"
             src="../img/trash-can-solid.svg"
             onclick="borrarFavorito('${favorito.id}')"

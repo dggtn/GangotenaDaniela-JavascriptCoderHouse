@@ -44,14 +44,12 @@ function listaDeCompras(){
           <span>${producto.nombre}</span>
           <span>${producto.descripcion}</span>
         </div>
-        <div style="padding-left: 1em;height:2em;padding-right: 1em;">
         <label for="quantity">Elige tu cantidad en kg:</label>
         <input onchange="elegirCantidad(${producto.id})" type="number" id="cantidad_${producto.id}" name="quantity" min="1" max="10" value="${producto.cantidad}">
         </div>
         <div class="total-price"><p>${producto.precio} el kilo</p></div>
         <img
           id="corazon_${producto.id}"
-          style="padding-left: 1em;height:2em;padding-right: 1em;"
           src="../img/trash-can-solid.svg"
           onclick="borrarCompra(${producto.id})"
         /> 

@@ -64,13 +64,13 @@ function mostrarProductos(){
       
       <div class="image">
         <img
-          class="img-fluid rounded mx-auto d-block"
+          class="rounded float-start fotoTienda"
           src="${producto.imagen}"
           alt="${producto.nombre}"
         />
       </div>
       
-      <div class="fs-4 ">
+      <div class="fs-4 mx-5">
         <span>${producto.nombre}</span>
         <span>${producto.categoria}</span>
         <span>${producto.descripcion}</span>
@@ -78,12 +78,12 @@ function mostrarProductos(){
 
       <div class="total-price fs-4"><p>${producto.precio} el kilo</p></div>
 <div>
-<button class="btn btn-success fs-4"onclick="seleccionarProducto(${producto.id})">Comprar</button>
+<button class="btn btn-success fs-4 mx-5"onclick="seleccionarProducto(${producto.id})">Comprar</button>
 </div>
 <div>
 <img
+class="corazon mx-5"
   id="corazon_${producto.id}"
-  style="padding-left: 1em;height:2em;padding-right: 1em;"
   src="../img/heart-regular.svg"
   onclick="productoFavoritoElegido(${producto.id})"
 />  

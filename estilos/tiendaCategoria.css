@@ -185,12 +185,14 @@
   height: 3rem;
   width: auto;
 }
+.corazon{
+  height:4em;
+  width: 4em;
+}
 
-.navbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content:center;
+.fotoTienda{
+  height:20em;
+  width: 20em;
 }
 .discount-2 .discount-info {
   float: none;
@@ -200,15 +202,3 @@
 .ocultar {
   display: none;
 }
-
-img{
-  height:8em;
-  width:8em;
-}
-
-footer {
-  width: 100%;
-  position: absolute;
-
-}
-

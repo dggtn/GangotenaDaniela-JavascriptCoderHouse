@@ -19,11 +19,7 @@
   font-weight: 400;
 }
  
-.item {
-  padding: 20px 30px;
-  display: flex;
-}
- 
+
 .item:nth-child(3) {
   border-top:  1px solid #E1E8EE;
   border-bottom:  1px solid #E1E8EE;
@@ -176,7 +172,7 @@ footer {
 footer p {
   font-size: 1rem;
   color: #f9fcff;
-  padding-right: 2%;
+ 
 }
 
 .header-mobile {
