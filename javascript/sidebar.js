@@ -35,6 +35,7 @@ function listaDeCompras(){
       
         <div class="image">
           <img
+            class="rounded"
             style="height: 6em"
             src="${producto.imagen}"
             alt="${producto.nombre}"
@@ -50,6 +51,7 @@ function listaDeCompras(){
         </div>
         <div class="total-price"><p>${producto.precio} el kilo</p></div>
         <img
+        class="corazon mx-1"
           id="corazon_${producto.id}"
           src="../img/trash-can-solid.svg"
           onclick="borrarCompra(${producto.id})"

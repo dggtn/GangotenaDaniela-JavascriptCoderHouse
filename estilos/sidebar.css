@@ -10,6 +10,15 @@
   display: flex;
   flex-direction: column;
 }
+.corazon{
+  height:4em;
+  width: 4em;
+}
+
+.fotoTienda{
+  height:20em;
+  width: 20em;
+}
 .title {
   height: 60px;
   border-bottom: 1px solid #E1E8EE;
