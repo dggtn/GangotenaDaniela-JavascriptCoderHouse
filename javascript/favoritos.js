@@ -13,6 +13,8 @@ function listaDeFavoritos(){
 
     let favoritosString =  localStorage.getItem("favoritos");       
     let favoritos = JSON.parse(favoritosString);
+
+    if(!favoritos) return;
     
     const contenedor = document.getElementById("favoritos");
     for(let i = 0; i< favoritos.length; i++){

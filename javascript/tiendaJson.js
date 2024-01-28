@@ -169,8 +169,8 @@ function filtrarPorCategoria(categoria){
         agregarClase(items[i], "ocultar");
         console.log(items[i].id)
         const productoFiltrado = productos.find((producto)=>"producto_" + producto.id == items[i].id);
-        console.log("Ocultar:",productoFiltrado)
         if(productoFiltrado){
+            console.log("Ocultar:",productoFiltrado)
             eliminarClase(items[i],"ocultar")
         }    
     }    

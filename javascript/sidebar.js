@@ -20,6 +20,7 @@ function listaDeCompras(){
   if(!productos) return;
 
   const contenedor = document.getElementById("productos");
+  contenedor.innerHTML = "";
   for(let i = 0; i< productos.length; i++){
 
       let producto = productos[i];
@@ -59,6 +60,8 @@ function listaDeCompras(){
       contenedor.appendChild(item);
   }
 
+  calcularTotalDeCompra();
+
 }
 
 function elegirCantidad (id){
@@ -87,6 +90,4 @@ totalApagar.innerHTML = precioTotal;
 
 }
 
-// Funciones de inicializacion
-calcularTotalDeCompra();
 
