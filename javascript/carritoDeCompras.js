@@ -32,25 +32,24 @@ function listaDeCompras(){
         
           <div class="image">
             <img
-            class="img-fluid rounded "
-              style="height: 6em"
+            class="rounded float-start fotoTienda"
               src="${producto.imagen}"
               alt="${producto.nombre}"
             />
           </div>
         
-          <div class="description">
+          <div class="fs-4 mx-5">
             <span>${producto.nombre}</span>
             <span>${producto.descripcion}</span>
           </div>
           
           <label for="quantity">Elige tu cantidad en kg:</label>
-          <input onchange="elegirCantidad(${producto.id})" type="number" id="cantidad_${producto.id}" name="quantity" min="1" max="10" value="${producto.cantidad}">
+          <input class="corazon mx-5" onchange="elegirCantidad(${producto.id})" type="number" id="cantidad_${producto.id}" name="quantity" min="1" max="10" value="${producto.cantidad}">
           </div>
           <div class="total-price"><p>${producto.precio} el kilo</p></div>
           <img
             id="corazon_${producto.id}"
-           
+            class="corazon mx-5"
             src="../img/trash-can-solid.svg"
             onclick="borrarCompra(${producto.id})"
           /> 
